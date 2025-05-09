@@ -6,27 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta
 			name="description"
-			content="AdrianCraft"
+			content="AgaDev portfolio"
 		/>
 		<meta
 			name="keywords"
-			content="HTML,CSS,JavaScript,AdrianCraft,AgaDev"
+			content="HTML,CSS,JavaScript,AgaDev"
 		/>
-		<title>AdrianCraft</title>
 
 		<link
 			rel="stylesheet"
-			href="css/style.css"
+			href="/css/index.css"
 		/>
 	</head>
 	<body>
 		<header>
-			<h1>AdrianCraft</h1>
+			<h1 id="author"></h1>
 			<nav><ul></ul></nav>
-			<button id="theme-button"></button>
+			<div>
+				<select id="language-select">
+					<option value="" lang-key="_navigator_"></option>
+					<option value="en" lang-key="_name_" lang="en"></option>
+					<option value="es" lang-key="_name_" lang="es"></option>
+					<option value="pt" lang-key="_name_" lang="pt"></option>
+				</select>
+				<button id="theme-button"></button>
+			</div>
 		</header>
-		<main></main>
+		<main>
+			<section>
+				<h1 lang-key="projects"></h1>
+				<div>
+					<h2 lang-key="agalang_title"></h2>
+					<img src="/imgs/agalang.webp">
+					<p lang-key="agalang_description"></p>
+				</div>
+				<div>
+					<h2 lang-key="agalang_title"></h2>
+					<img src="/imgs/agalang.webp">
+					<p lang-key="agalang_description"></p>
+				</div>
+				<div>
+					<h2 lang-key="agalang_title"></h2>
+					<img src="/imgs/agalang.webp">
+					<p lang-key="agalang_description"></p>
+				</div>
+			</section>
+		</main>
 		<footer></footer>
 	</body>
-	<script src="js/index.js" type="module"></script>
+	<script src="/js/index.js" type="module"></script>
 </html>

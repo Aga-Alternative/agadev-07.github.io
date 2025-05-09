@@ -1,0 +1,80 @@
+@media screen and (max-width: 1200px) {
+	:root {
+		--project-card-items: 2;
+	}
+	body > main {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 880px) {
+	body {
+		> header {
+			flex-direction: column;
+			align-items: center;
+			> h1 {
+				width: 100%;
+			}
+			> div {
+				flex-direction: column;
+				> select, > button {
+					padding: 1rem;
+				}
+			}
+			> nav > ul {
+				padding: 1rem;
+				flex-wrap: wrap;
+				> li {
+					width: 50%;
+					> a {
+						width: 100%;
+					}
+				}
+			}
+		}
+		> main {
+			width: 90%;
+		}
+	}
+}
+@media screen and (max-width: 700px) {
+	:root {
+		--project-card-items: 1;
+	}
+	body > main {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 600px) {
+	body {
+		> header {
+			flex-direction: column;
+			align-items: center;
+
+			> nav > ul {
+				padding: 1rem;
+				flex-wrap: wrap;
+				> li {
+					width: 50%;
+					> a {
+						width: 100%;
+					}
+				}
+			}
+		}
+		> main {
+			width: 90%;
+		}
+	}
+}
+@media screen and (max-width: 570px) {
+	body {
+		> header {
+			justify-content: center;
+			> div {
+				flex-direction: row;
+				width: 100%;
+				justify-content: center;
+			}
+		}
+	}
+}

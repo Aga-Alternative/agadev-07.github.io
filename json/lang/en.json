@@ -1,0 +1,13 @@
+{
+  "_navigator_": "Navigator",
+	"_name_": "English",
+	"home": "Home",
+	"about": "About me",
+	"contact": "Contact",
+	"projects": "Projects",
+	"error_404": "Error 404",
+	"error_404_msg": "Page not found",
+	"agalang_title": "Agal",
+	"agalang_description": "Agal is a Spanish programming language, borrowing concepts from other languages ​​such as instance properties and asynchrony.",
+	"developed_in": "Developed in %s."
+}

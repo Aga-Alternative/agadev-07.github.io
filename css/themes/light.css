@@ -1,0 +1,20 @@
+
+:root[theme='light'] {
+	--body-background-color: #dadada;
+	--body-color: #646464;
+	--header-background-color: #c1c1c1;
+	--header-hover-background-color: #a9a9a9;
+	--project-background-color: #c1c1c1;
+
+	--theme-button-icon: '🌙';
+}
+@media (prefers-color-scheme: light) {
+	:root {
+		--body-background-color: #dadada;
+		--body-color: #757575;
+		--header-background-color: #c1c1c1;
+		--header-hover-background-color: #a9a9a9;
+	
+		--theme-button-icon: '🌙';
+	}
+}

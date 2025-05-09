@@ -1,0 +1,13 @@
+{
+	"_navigator_": "Navegador",
+	"_name_": "Português",
+	"home": "Início",
+	"about": "Sobre mim",
+	"contact": "Contato",
+	"projects": "Projetos",
+	"error_404": "Erro 404",
+	"error_404_msg": "Página não encontrada",
+	"agalang_title": "Agal",
+	"agalang_description": "Agal é uma linguagem de programação espanhola que toma emprestados conceitos de outras linguagens, como propriedades de instância e assincronia.",
+	"developed_in": "Desenvolvido em %s."
+}

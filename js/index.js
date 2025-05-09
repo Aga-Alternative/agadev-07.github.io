@@ -1,4 +1,12 @@
-import './interactions.js'
-import { setInterface } from "./interface.js";
+import { setInterface } from './interface.js';
+import { loadEvents } from './interactions.js';
+import { useTheme } from './utils/theme.js';
+import { useTranslate } from './utils/translate.js';
 
-setInterface();
+document.addEventListener('DOMContentLoaded', () => {
+	setInterface();
+
+	useTheme();
+	loadEvents();
+	useTranslate();
+});

@@ -6,32 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta
 			name="description"
-			content="AdrianCraft"
+			content="AgaDev portfolio 404"
 		/>
 		<meta
 			name="keywords"
-			content="HTML,CSS,JavaScript,AdrianCraft,AgaDev"
+			content="HTML,CSS,JavaScript,AgaDev"
 		/>
-		<title>AdrianCraft</title>
+		<title></title>
 
 		<link
 			rel="stylesheet"
-			href="/css/style.css"
+			href="/css/index.css"
 		/>
 	</head>
 	<body>
 		<header>
-			<h1>AdrianCraft</h1>
+			<h1 id="author"></h1>
 			<nav><ul></ul></nav>
-      <select name="language" id="lang">
-        <option value="en">English</option>
-        <option value="es">Español</option>
+      <select id="language-select">
+				<option value="" lang-key="_navigator_"></option>
+        <option value="en" lang-key="_name_" lang="en"></option>
+        <option value="es" lang-key="_name_" lang="es"></option>
+        <option value="pt" lang-key="_name_" lang="pt"></option>
       </select>
 			<button id="theme-button"></button>
 		</header>
 		<main>
-      <h1 id="error-message">Error&nbsp;<p id="error-code">404</p></h1><br>
-      <h1 id="message-error"></h1>
+      <h1 id="error-message" lang-key="error_404"></h1><br>
+      <h1 id="message-error" lang-key="error_404_msg"></h1>
     </main>
 		<footer></footer>
 	</body>

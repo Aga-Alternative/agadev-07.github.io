@@ -1,3 +1,7 @@
-import { replaceTheme } from './utils.js';
+import { replaceTheme } from './utils/theme.js';
+import { setLanguage } from './utils/translate.js';
 
-document.querySelector('button#theme-button').addEventListener('click', replaceTheme);
+export function loadEvents(){
+  document.querySelector('button#theme-button').addEventListener('click', replaceTheme);
+  document.querySelector('select#language-select').addEventListener('change', setLanguage)
+}
