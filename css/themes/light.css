@@ -1,7 +1,7 @@
 
 :root[theme='light'] {
 	--body-background-color: #dadada;
-	--body-color: #646464;
+	--body-color: #333333;
 	--header-background-color: #c1c1c1;
 	--header-hover-background-color: #a9a9a9;
 	--project-background-color: #c1c1c1;
@@ -11,7 +11,7 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		--body-background-color: #dadada;
-		--body-color: #757575;
+	--body-color: #333333;
 		--header-background-color: #c1c1c1;
 		--header-hover-background-color: #a9a9a9;
 	
