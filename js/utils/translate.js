@@ -24,6 +24,10 @@ export function useTranslate() {
 		const preLang = e.hasAttribute('data-lang') ? e.getAttribute('data-lang') : language;
 		const lang = preLang in translations ? preLang : 'en';
 		let value = getTranslation(lang, e.getAttribute('data-lang-key'));
+		if (e.hasAttribute('data-lang-args')) {
+			const args = e.getAttribute('data-lang-args').split(',');
+			value = value.replace(/%s/g, () => args.shift());
+		}
 		if (e.hasAttribute('data-lang-type')){
 			let type = e.getAttribute('data-lang-type');
 			e.setAttribute(type, value);
