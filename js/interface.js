@@ -16,7 +16,7 @@ export function setInterface() {
 	Interface.nav.forEach(([link, translate]) => {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
-		const h3 = document.createElement('h3');
+		const h3 = document.createElement('h2');
 
 		li.appendChild(a);
 		a.appendChild(h3);
