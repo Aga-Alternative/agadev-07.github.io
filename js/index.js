@@ -4,9 +4,9 @@ import { useTheme } from './utils/theme.js';
 import { useTranslate } from './utils/translate.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+	useTheme();
 	setInterface();
 
-	useTheme();
 	loadEvents();
 	useTranslate();
 });
