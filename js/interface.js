@@ -1,7 +1,7 @@
 const INIT_YEAR = 2023;
 const AUTHOR = 'AgaDev';
 
-export function setInterface(language = 'es') {
+export function setInterface() {
 	const Interface = {
 		nav: [
 			['/', 'home'],
@@ -21,7 +21,7 @@ export function setInterface(language = 'es') {
 		li.appendChild(a);
 		a.appendChild(h3);
 		a.href = link;
-		h3.setAttribute("lang-key", translate)
+		h3.setAttribute("data-lang-key", translate)
 
 		ul.appendChild(li);
 	});
