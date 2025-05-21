@@ -4,12 +4,30 @@ import pt from '/json/lang/pt.json' with {type:"json"};
 
 export const translations = {es,en,pt};
 
+
+export function getTranslation(lang, key) {
+	if(key in translations[lang]) return translations[lang][key];
+		for (const lang of navigator.languages) {
+		let language = lang.split('-')[0];
+		if (language in translations) if(key in translations[language]) return translations[language][key];
+	}
+	if(key in translations.en) return translations.en[key];
+	return key;
+}
+
 export function useTranslate() {
 	const language = getLanguage();
-	document.querySelectorAll('[lang-key]').forEach(e => {
-		const preLang = e.hasAttribute('lang') ? e.getAttribute('lang') : language;
+	document.documentElement.setAttribute("lang", language);
+	if(localStorage.getItem('lang'))
+	document.querySelector('select#language-select').value = language;
+	document.querySelectorAll('[data-lang-key]').forEach(e => {
+		const preLang = e.hasAttribute('data-lang') ? e.getAttribute('data-lang') : language;
 		const lang = preLang in translations ? preLang : 'en';
-		e.textContent = translations[lang]?.[e.getAttribute('lang-key')];
+		let value = getTranslation(lang, e.getAttribute('data-lang-key'));
+		if (e.hasAttribute('data-lang-type')){
+			let type = e.getAttribute('data-lang-type');
+			e.setAttribute(type, value);
+		}else e.textContent = value;
 	});
 }
 export function getLanguage() {
