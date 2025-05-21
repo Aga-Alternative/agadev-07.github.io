@@ -116,6 +116,8 @@ body {
 				> img {
 					border-radius: 0.5em;
 					width: 100%;
+					aspect-ratio: 582 / 347;
+					height: auto;
 				}
 				> p.developed_in {
 					margin: 0.5em 0.5em 0 0;
