@@ -1,5 +1,5 @@
 {
-  "_navigator_": "Navegador",
+  "_navigator_": "Automático",
 	"_name_": "Español",
 	"home": "Inicio",
 	"about": "Sobre mí",
@@ -9,7 +9,7 @@
 	"error_404_msg": "Página no encontrada",
 	"agalang_title": "Agal",
 	"agalang_image": "Vista previa de Agal en Visual Studio Code",
-	"agalang_description": "Agal es un lenguaje de programación en español, tomando conceptos de algunos lenguajes como las propiedades de instancia o la asincronia.",
+	"agalang_description": "Agal es un lenguaje de programación en español, tomando conceptos de algunos lenguajes como las propiedades de instancia o la asincronía.",
 	"language_selector": "Selector de idioma",
 	"theme_button": "Selector de tema",
 	"developed_in": "Desarrollado en %s."

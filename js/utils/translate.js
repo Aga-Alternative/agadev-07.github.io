@@ -1,49 +1,54 @@
-import es from '/json/lang/es.json' with {type:"json"};
-import en from '/json/lang/en.json' with {type:"json"};
-import pt from '/json/lang/pt.json' with {type:"json"};
+import es from '/locales/es.json' with {type:"json"};
+import en from '/locales/en.json' with {type:"json"};
+import pt from '/locales/pt.json' with {type:"json"};
 
 export const translations = {es,en,pt};
 
 
 export function getTranslation(lang, key) {
 	if(key in translations[lang]) return translations[lang][key];
-		for (const lang of navigator.languages) {
+	for (const lang of navigator.languages) {
 		let language = lang.split('-')[0];
-		if (language in translations) if(key in translations[language]) return translations[language][key];
+		if(translations[language]?.[key]) return translations[language][key];
 	}
-	if(key in translations.en) return translations.en[key];
-	return key;
+	return translations.en[key] ?? key;
 }
 
 export function useTranslate() {
 	const language = getLanguage();
-	document.documentElement.setAttribute("lang", language);
+	const $html = document.documentElement;
+
+	const originalLang = $html.getAttribute("lang");
+
+	if (originalLang === language) return;
+	$html.setAttribute("lang", language);
+
 	if(localStorage.getItem('lang'))
-	document.querySelector('select#language-select').value = language;
-	document.querySelectorAll('[data-lang-key]').forEach(e => {
-		const preLang = e.hasAttribute('data-lang') ? e.getAttribute('data-lang') : language;
+		document.querySelector('select#language-select').value = language;
+
+	for (const $el of document.querySelectorAll('[data-lang-key]')) {
+		const preLang = $el.hasAttribute('data-lang') ? $el.getAttribute('data-lang') : language;
 		const lang = preLang in translations ? preLang : 'en';
-		let value = getTranslation(lang, e.getAttribute('data-lang-key'));
-		if (e.hasAttribute('data-lang-args')) {
-			const args = e.getAttribute('data-lang-args').split(',');
+		let value = getTranslation(lang, $el.getAttribute('data-lang-key'));
+		if ($el.hasAttribute('data-lang-args')) {
+			const args = $el.getAttribute('data-lang-args').split(',');
 			value = value.replace(/%s/g, () => args.shift());
 		}
-		if (e.hasAttribute('data-lang-type')){
-			let type = e.getAttribute('data-lang-type');
-			e.setAttribute(type, value);
-		}else e.textContent = value;
-	});
+		if ($el.hasAttribute('data-lang-type')){
+			let type = $el.getAttribute('data-lang-type');
+			$el.setAttribute(type, value);
+		}else $el.textContent = value;
+	}
 }
 export function getLanguage() {
-	let storageLang = localStorage.getItem('lang');
-	if (storageLang in translations) return storageLang;
-	let language = navigator.language.split('-')[0];
-	if (language in translations) return language;
-	for (const lang of navigator.languages) {
-		let language = lang.split('-')[0];
-		if (language in translations) return language;
-	}
-	return 'en';
+	const saved = localStorage.getItem('lang');
+	if (saved && saved in translations) return saved;
+
+	const detected = navigator.languages
+		.map(l => l.split('-')[0])
+		.find(l => l in translations);
+
+	return detected || 'en';
 }
 export function setLanguage() {
 	const lang = document.querySelector('select#language-select').value;
