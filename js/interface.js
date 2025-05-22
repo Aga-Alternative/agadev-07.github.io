@@ -5,8 +5,8 @@ export function setInterface() {
 	const Interface = {
 		nav: [
 			['/', 'home'],
-			['/about', 'about'],
-			['/contact', 'contact'],
+	//	['/about', 'about'],
+	//	['/contact', 'contact'],
 			['/projects', 'projects'],
 		],
 	};

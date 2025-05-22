@@ -32,7 +32,22 @@ export function useTranslate() {
 		let value = getTranslation(lang, $el.getAttribute('data-lang-key'));
 		if ($el.hasAttribute('data-lang-args')) {
 			const args = $el.getAttribute('data-lang-args').split(',');
-			value = value.replace(/%s/g, () => args.shift());
+			value = value.replace('%s', args.shift());
+		}
+		if ($el.hasAttribute('data-lang-args-and-list')) {
+			const args = $el.getAttribute('data-lang-args-and-list').split(',');
+			const comma = getTranslation(lang, 'comma')
+			const and = getTranslation(lang, 'and')
+			console.log(args);
+			if (args.length > 1) {
+				const last = args.pop();
+  			let result = args[0];
+  			for (let i = 1; i < args.length; i++) {
+  			  result = comma.replace('%s', result).replace('%s', args[i]);
+  			}
+				result = and.replace('%s', result).replace('%s', last);
+				value = value.replace('%s', result);
+			}else value = value.replace('%s', args.shift());
 		}
 		if ($el.hasAttribute('data-lang-type')){
 			let type = $el.getAttribute('data-lang-type');
