@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="88" height="88" id="aga-logo">
+  <defs>
+    <clipPath id="hexClip">
+      <path d="M 44,0 L 6.9,22 L 6.9,66 L 44,88 L 81.1,66 L 81.1,22 Z" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#hexClip)">
+    <path style="opacity:1" fill="#837d7d" d="M 44,0 L 0,0 L 0,88 L 44,88 Z" class="light-background"/>
+    <path style="opacity:1" fill="#4c4c4c" d="M 88,0 L 44,0 L 44,88 L 88,88 Z" class="dark-background"/>
+    <path style="opacity:0.8" fill="#010202" d="M 29,58 L 46,22 L 81.1,66 L 56,88 Z" class="shadow"/>
+    <path style="fill:#ef0f08" class="light-letter"
+      d="M 44,22 L 42,22 L 29,58 L 37,58 L 40,52 L 44,52 L 44,45 L 42,45 L 44,38 Z" />
+    <path style="fill:#cf0606" class="dark-letter"
+      d="M 44,22 L 46,22 L 59,58 L 51,58 L 48,52 L 44,52 L 44,45 L 46,45 L 44,38 Z" />
+  </g>
+</svg>

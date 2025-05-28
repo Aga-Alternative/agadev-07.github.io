@@ -5,7 +5,14 @@
 	--header-hover-background-color: #161616;
 	--project-background-color: #272727;
 
-	--theme-button-icon: '☀️';
+	& svg {
+		& g#sun {
+			opacity: 0;
+		}
+		& g#moon {
+			opacity: 1;
+		}
+	}
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -14,7 +21,14 @@
 		--header-background-color: #252525;
 		--header-hover-background-color: #161616;
 		--project-background-color: #272727;
-	
-		--theme-button-icon: '☀️';
+
+		& svg {
+			& g#sun {
+				opacity: 0;
+			}
+			& g#moon {
+				opacity: 1;
+			}
+		}
 	}
 }
