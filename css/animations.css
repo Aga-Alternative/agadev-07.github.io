@@ -1,0 +1,40 @@
+@keyframes moon-slide-in {
+	from { transform: translateX(-100px); }
+	to   { transform: translateX(0); }
+}
+@keyframes moon-slide-out {
+	from { transform: translateX(0); }
+	to   { transform: translateX(-100px); }
+}
+@keyframes sun-slide-in {
+	from { transform: translateX(100px); }
+	to   { transform: translateX(0); }
+}
+@keyframes sun-slide-out {
+	from { transform: translateX(0); }
+	to   { transform: translateX(100px); }
+}
+@keyframes cloud-slide-right {
+	from { transform: translateX(-100px); }
+	to   { transform: translateX(100px); }
+}
+@keyframes cloud-slide-left {
+	from { transform: translateX(100px); }
+	to   { transform: translateX(-100px); }
+}
+@keyframes blink1 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes blink2 {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+@keyframes fade-in {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+@keyframes fade-out {
+	from { opacity: 1; }
+	to   { opacity: 0; }
+}

@@ -1,3 +1,4 @@
+@import url('../animations.css');
 :root[theme='dark'] {
 	--body-background-color: #353535;
 	--body-color: #b6b6b6;
@@ -6,11 +7,30 @@
 	--project-background-color: #272727;
 
 	& svg {
-		& g#sun {
-			opacity: 0;
+		#dark {
+			animation: fade-in 1s ease-in-out forwards;
+			transform-box: fill-box;
+			transform-origin: center;
+			#moon {
+				animation: moon-slide-in 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+			}
 		}
-		& g#moon {
-			opacity: 1;
+		#light {
+			animation: fade-out 1s ease-in-out forwards;
+			transform-box: fill-box;
+			transform-origin: center;
+			#sun {
+				animation: sun-slide-out 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+			}
+		}
+		#cloud {
+			animation: cloud-slide-left 1s ease-in-out forwards;
+			transform-box: fill-box;
+			transform-origin: center;
 		}
 	}
 }
@@ -23,11 +43,30 @@
 		--project-background-color: #272727;
 
 		& svg {
-			& g#sun {
-				opacity: 0;
+			#dark {
+				animation: fade-in 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+				#moon {
+					animation: moon-slide-in 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+				}
 			}
-			& g#moon {
-				opacity: 1;
+			#light {
+				animation: fade-out 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+				#sun {
+					animation: sun-slide-out 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+				}
+			}
+			#cloud {
+				animation: cloud-slide-left 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
 			}
 		}
 	}

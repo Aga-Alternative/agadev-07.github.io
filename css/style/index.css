@@ -75,15 +75,21 @@ body {
 				}
 			}
 			> button {
+				&:disabled,
+				&[disabled] {
+					cursor: pointer;
+				}
 				border: none;
 				outline: none;
 				cursor: pointer;
 				font-size: 1.3em;
 				background-color: transparent;
+				display: flex;
+				align-items: center;
 				> svg {
-					margin-left: 1em;
+					margin-left: 30%;
 					width: 4rem;
-					height: 3rem;
+					height: 2rem;
 				}
 			}
 		}

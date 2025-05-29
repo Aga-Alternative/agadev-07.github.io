@@ -2,113 +2,27 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<meta
-			http-equiv="X-UA-Compatible"
-			content="ie=edge"
-		/>
-		<meta
-			name="description"
-			content="AgaDev portfolio"
-		/>
-		<meta
-			name="keywords"
-			content="HTML,CSS,JavaScript,AgaDev"
-		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="description" content="AgaDev portfolio" />
+		<meta name="keywords" content="HTML,CSS,JavaScript,AgaDev" />
 
-		<link
-			rel="stylesheet"
-			href="/css/index.css"
-		/>
+		<link rel="stylesheet" href="/css/index.css" />
+		<script src="/js/index.js" type="module"></script>
 	</head>
 	<body>
 		<header>
 			<h1 id="author"></h1>
 			<nav><ul></ul></nav>
 			<div>
-				<select
-					id="language-select"
-					data-lang-key="language_selector"
-					data-lang-type="aria-label"
-				>
-					<option
-						value=""
-						data-lang-key="_navigator_"
-					></option>
-					<option
-						value="en"
-						data-lang-key="_name_"
-						data-lang="en"
-					></option>
-					<option
-						value="es"
-						data-lang-key="_name_"
-						data-lang="es"
-					></option>
-					<option
-						value="pt"
-						data-lang-key="_name_"
-						data-lang="pt"
-					></option>
+				<select id="language-select" data-lang-key="language_selector" data-lang-type="aria-label">
+					<option value="" data-lang-key="_navigator_"></option>
+					<option value="en" data-lang-key="_name_" data-lang="en"></option>
+					<option value="es" data-lang-key="_name_" data-lang="es"></option>
+					<option value="pt" data-lang-key="_name_" data-lang="pt"></option>
 				</select>
-				<button
-					id="theme-button"
-					data-lang-key="theme_button"
-					data-lang-type="aria-label"
-				>
-					<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-  					<defs>
-  					  <clipPath id="toggle-clip">
-  					    <circle cx="50" cy="50" r="50"/>
-  					    <circle cx="150" cy="50" r="50"/>
-  					    <path d="M 50,0 L 150,0 L 150,100 L 50,100 Z"/>
-  					  </clipPath>
-  					</defs>
-  					<defs>
-  					  <clipPath id="moon-clip">
-  					    <circle cx="150" cy="50" r="40"/>
-  					  </clipPath>
-  					</defs>
-  					<g clip-path="url(#toggle-clip)" id="sun">
-  					  <path d="M 0,0 L 200,0 L 200,100 L 0,100 Z" fill="#2178DD"/>
-  					  <circle cx="50" cy="50" r="145" fill="#3286DF"/>
-  					  <circle cx="50" cy="50" r="115" fill="#4395E2"/>
-  					  <circle cx="50" cy="50" r="90" fill="#54A3E4"/>
-  					  <circle cx="50" cy="50" r="70" fill="#65B1E6"/>
-  					  <circle cx="50" cy="50" r="55" fill="#76C0E9"/>
-  					  <circle cx="50" cy="50" r="45" fill="#87CEEB"/>
-  					  <circle cx="50" cy="50" r="40" fill="gold"/>
-  					  <g style="opacity:0.7">
-  					    <circle cx="200" cy="70" r="40" fill="white"/>
-  					    <circle cx="150" cy="75" r="30" fill="white"/>
-  					    <circle cx="100" cy="90" r="40" fill="white"/>
-  					  </g>
-  					</g>
-  					<g clip-path="url(#toggle-clip)" id="moon">
-  					  <path d="M 0,0 L 200,0 L 200,100 L 0,100 Z" fill="#000000"/>
-  					  <circle cx="150" cy="50" r="145" fill="#070A0D"/>
-  					  <circle cx="150" cy="50" r="115" fill="#0F151B"/>
-  					  <circle cx="150" cy="50" r="90" fill="#161F28"/>
-  					  <circle cx="150" cy="50" r="70" fill="#1D2935"/>
-  					  <circle cx="150" cy="50" r="55" fill="#253443"/>
-  					  <circle cx="150" cy="50" r="45" fill="#2C3E50"/>
-  					  <g clip-path="url(#moon-clip)">
-  					    <circle cx="150" cy="50" r="40" fill="#e0e0e0"/>
-  					    <circle cx="175" cy="50" r="5" fill="#c0c0c0"/>
-  					    <circle cx="125" cy="75" r="15" fill="#c0c0c0"/>
-  					    <circle cx="143" cy="38" r="15" fill="#c0c0c0"/>
-  					    <circle cx="173" cy="73" r="10" fill="#c0c0c0"/>
-  					  </g>
-  					  <g style="opacity:0.7">
-  					    <circle cx="0" cy="70" r="40" fill="white"/>
-  					    <circle cx="50" cy="75" r="30" fill="white"/>
-  					    <circle cx="100" cy="90" r="40" fill="white"/>
-  					  </g>
-  					</g>
-					</svg>
+				<button id="theme-button" data-lang-key="theme_button" data-lang-type="aria-label">
+					<svg src="themes.svg"></svg>
 				</button>
 			</div>
 		</header>
@@ -119,30 +33,14 @@
 				<div class="projects-container">
 					<div>
 						<h3 data-lang-key="agalang_title"></h3>
-						<img
-							src="/imgs/agalang.webp"
-							data-lang-key="agalang_image"
-							data-lang-type="alt"
-						/>
-						<p
-							class="developed_in"
-							data-lang-key="developed_in"
-							data-lang-args="Rust"
-						></p>
+						<img src="/imgs/agalang.webp" data-lang-key="agalang_image" data-lang-type="alt" />
+						<p class="developed_in" data-lang-key="developed_in" data-lang-args="Rust"></p>
 						<p data-lang-key="agalang_description"></p>
 					</div>
 					<div>
 						<h3 data-lang-key="agamca_title"></h3>
-						<img
-							src="/imgs/agamca.webp"
-							data-lang-key="agamca_image"
-							data-lang-type="alt"
-						/>
-						<p
-							class="developed_in"
-							data-lang-key="developed_in"
-							data-lang-args-and-list="HTML,CSS,JavaScript"
-						></p>
+						<img src="/imgs/agamca.webp" data-lang-key="agamca_image" data-lang-type="alt" />
+						<p class="developed_in" data-lang-key="developed_in" data-lang-args-and-list="HTML,CSS,JavaScript"></p>
 						<p data-lang-key="agamca_description"></p>
 					</div>
 				</div>
@@ -150,8 +48,4 @@
 		</main>
 		<footer></footer>
 	</body>
-	<script
-		src="/js/index.js"
-		type="module"
-	></script>
 </html>
