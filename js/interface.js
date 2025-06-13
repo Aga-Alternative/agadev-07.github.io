@@ -1,3 +1,4 @@
+import { translations } from "./utils/translate.js"
 const INIT_YEAR = 2023;
 const AUTHOR = 'AgaDev';
 
@@ -5,8 +6,8 @@ export function setInterface() {
 	const Interface = {
 		nav: [
 			['/', 'home'],
-	//	['/about', 'about'],
-	//	['/contact', 'contact'],
+			//	['/about', 'about'],
+			//	['/contact', 'contact'],
 			['/projects', 'projects'],
 		],
 	};
@@ -34,4 +35,13 @@ export function setInterface() {
 		return `©${years} ${AUTHOR}`;
 	})();
 	document.querySelector('footer').appendChild(footer_p);
+	const languageSelector = document.querySelector('#language-select');
+
+	for (const lang of Object.keys(translations)) {
+		const option = document.createElement('option');
+		option.setAttribute("value", lang);
+		option.setAttribute("data-lang", lang);
+		option.setAttribute("data-lang-key", "__name__");
+		languageSelector.appendChild(option)
+	}
 }
