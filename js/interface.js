@@ -41,7 +41,7 @@ export function setInterface() {
 		const option = document.createElement('option');
 		option.setAttribute("value", lang);
 		option.setAttribute("data-lang", lang);
-		option.setAttribute("data-lang-key", "__name__");
+		option.setAttribute("data-lang-key", "_name_");
 		languageSelector.appendChild(option)
 	}
 }
