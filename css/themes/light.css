@@ -1,39 +1,61 @@
 @import url('../animations.css');
-:root[theme='light'] {
+
+:root[data-theme='light'] {
 	--body-background-color: #dadada;
 	--body-color: #333333;
 	--header-background-color: #c1c1c1;
 	--header-hover-background-color: #a9a9a9;
 	--project-background-color: #c1c1c1;
 
-	& svg {
+	svg {
 		#dark {
-			animation: fade-out 1s ease-in-out forwards;
-			transform-box: fill-box;
-			transform-origin: center;
-			#moon {
-				animation: moon-slide-out 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-			}
+			opacity: 0;
 		}
+
 		#light {
-			animation: fade-in 1s ease-in-out forwards;
-			transform-box: fill-box;
-			transform-origin: center;
-			#sun {
-				animation: sun-slide-in 1s ease-in-out forwards;
+			opacity: 1;
+		}
+
+		#cloud {
+			transform: translate(100px);
+		}
+	}
+
+	&.animate {
+		svg {
+			#dark {
+				animation: fade-out 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+
+				#moon {
+					animation: moon-slide-out 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+				}
+			}
+
+			#light {
+				animation: fade-in 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+
+				#sun {
+					animation: sun-slide-in 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+				}
+			}
+
+			#cloud {
+				animation: cloud-slide-right 1s ease-in-out forwards;
 				transform-box: fill-box;
 				transform-origin: center;
 			}
-		}
-		#cloud {
-			animation: cloud-slide-right 1s ease-in-out forwards;
-			transform-box: fill-box;
-			transform-origin: center;
 		}
 	}
 }
+
 @media (prefers-color-scheme: light) {
 	:root {
 		--body-background-color: #dadada;
@@ -41,31 +63,51 @@
 		--header-background-color: #c1c1c1;
 		--header-hover-background-color: #a9a9a9;
 
-		& svg {
+		svg {
 			#dark {
-				animation: fade-out 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-				#moon {
-					animation: moon-slide-out 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
-				}
+				opacity: 0;
 			}
+
 			#light {
-				animation: fade-in 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-				#sun {
-					animation: sun-slide-in 1s ease-in-out forwards;
+				opacity: 1;
+			}
+
+			#cloud {
+				transform: translate(100px);
+			}
+		}
+
+		&.animate {
+			svg {
+				#dark {
+					animation: fade-out 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+
+					#moon {
+						animation: moon-slide-out 1s ease-in-out forwards;
+						transform-box: fill-box;
+						transform-origin: center;
+					}
+				}
+
+				#light {
+					animation: fade-in 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+
+					#sun {
+						animation: sun-slide-in 1s ease-in-out forwards;
+						transform-box: fill-box;
+						transform-origin: center;
+					}
+				}
+
+				#cloud {
+					animation: cloud-slide-right 1s ease-in-out forwards;
 					transform-box: fill-box;
 					transform-origin: center;
 				}
-			}
-			#cloud {
-				animation: cloud-slide-right 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
 			}
 		}
 	}

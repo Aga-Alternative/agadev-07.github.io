@@ -7,6 +7,7 @@ export function loadEvents() {
 		$ThemeButton.setAttribute('disabled', '');
 		replaceTheme();
 		setTimeout(() => $ThemeButton.removeAttribute('disabled'), 1000);
+		document.documentElement.className = 'animate'
 	});
 	document.querySelector('select#language-select').addEventListener('change', setLanguage);
 }
