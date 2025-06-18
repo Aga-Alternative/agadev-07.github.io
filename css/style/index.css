@@ -6,6 +6,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	background-color: var(--body-background-color);
@@ -13,48 +14,54 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	> header {
+
+	>header {
 		background-color: var(--header-background-color);
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
 		justify-content: space-around;
+		box-shadow: 0 0 5px red;
 
-		> h1 {
+		>h1 {
 			display: flex;
 			justify-content: center;
 		}
-		> nav {
-			> ul {
+
+		>nav {
+			>ul {
 				height: 100%;
 				list-style: none;
 				display: flex;
 				justify-content: space-between;
 
-				> li {
-					> a {
+				>li {
+					>a {
 						height: 100%;
 						text-decoration: none;
 						color: var(--body-color);
 
-						> h2 {
+						>h2 {
 							font-size: 1.17em;
 							padding: 10px;
 							display: flex;
 							justify-content: center;
 						}
 					}
+
 					&:hover {
 						background-color: var(--header-hover-background-color);
 					}
 				}
 			}
 		}
-		> div {
+
+		>div {
 			display: flex;
 			flex-wrap: wrap;
-			> select {
+
+			>select {
 				border-style: none;
 				outline: none;
 				cursor: pointer;
@@ -64,21 +71,21 @@ body {
 				display: flex;
 				align-items: center;
 				justify-content: center;
+
 				&:hover {
 					background-color: var(--header-hover-background-color);
 				}
-				> option {
+
+				>option {
 					background-color: var(--header-background-color);
+
 					&:hover {
 						background-color: var(--header-hover-background-color);
 					}
 				}
 			}
-			> button {
-				&:disabled,
-				&[disabled] {
-					cursor: pointer;
-				}
+
+			>button {
 				border: none;
 				outline: none;
 				cursor: pointer;
@@ -86,7 +93,8 @@ body {
 				background-color: transparent;
 				display: flex;
 				align-items: center;
-				> svg {
+
+				>svg {
 					margin-left: 30%;
 					width: 4rem;
 					height: 2rem;
@@ -94,15 +102,18 @@ body {
 			}
 		}
 	}
-	> main {
+
+	>main {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		> section#error {
+
+		>section#error {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
-			> h2#error-message {
+
+			>h2#error-message {
 				display: flex;
 				justify-content: center;
 				align-items: flex-end;
@@ -111,27 +122,32 @@ body {
 				margin-top: 5rem;
 				font-size: 4.5rem;
 			}
-			> h3#message-error {
+
+			>h3#message-error {
 				display: flex;
 				justify-content: center;
 				font-size: 2.5rem;
 			}
 		}
-		> section#projects {
+
+		>section#projects {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			> h2 {
+
+			>h2 {
 				width: 100%;
 				display: flex;
 				justify-content: center;
 				font-size: 3em;
 			}
-			> div.projects-container {
+
+			>div.projects-container {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
-				> div {
+
+				>div {
 					border-radius: 1em;
 					display: flex;
 					flex-direction: column;
@@ -139,17 +155,21 @@ body {
 					margin: var(--project-card-margin);
 					width: calc((100% / var(--project-card-items)) - (var(--project-card-margin) * 2));
 					background-color: var(--project-background-color);
-					> h3 {
+
+					>h3 {
 						margin-bottom: 0.3em;
 						font-size: 1.5em;
 					}
-					> img {
+
+					>img,
+					>svg {
 						border-radius: 0.5em;
 						width: 100%;
 						aspect-ratio: 582 / 347;
 						height: auto;
 					}
-					> p.developed_in {
+
+					>p.developed_in {
 						margin: 0.5em 0.5em 0 0;
 						font-size: 0.8em;
 						text-align: right;
@@ -159,17 +179,51 @@ body {
 			}
 		}
 	}
-	> footer {
+
+	>footer {
 		position: fixed;
 		bottom: 0;
 		display: flex;
 		width: 100%;
-		> p {
+
+		>p {
 			display: flex;
 			justify-content: center;
 			padding: 1rem 0;
 			width: 100%;
 			text-align: center;
 		}
+	}
+}
+
+svg.code {
+	text {
+		fill: #d4d4d4;
+	}
+  .bracket-1 { fill: #ffff00; }   /* Amarillo */
+  .bracket-2 { fill: #d351c8; }   /* Morado */
+	.bracket-3 { fill: #2e94e7; }   /* Azul */
+	.variable { fill: #9CDCFE; }
+	.constant { fill: #b5cea8; }
+	.type { fill: #4EC9B0; }
+	.function { fill: #dcdcaa; }
+	.keyword {
+		fill: #569cd6;
+		font-style: italic;
+		&.control { fill: #C586C0; }
+	}
+
+	.string {
+		fill: #ce9178;
+		.scape { fill: #ebc498; }
+	}
+}
+svg.code {
+	.keyword {
+		fill: #0000ff;
+		&.control { fill: #AF00DB};
+	}
+	.variable {
+		fill: #267f99
 	}
 }

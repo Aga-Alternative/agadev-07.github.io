@@ -110,5 +110,8 @@
 				}
 			}
 		}
+		img[data-lang-key=agalang_image] {
+			content: url(../../imgs/agamca.webp);
+		}
 	}
 }

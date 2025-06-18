@@ -54,6 +54,10 @@
 			}
 		}
 	}
+
+	img[data-lang-key=agalang_image] {
+		content: url(../../imgs/agalang.webp);
+	}
 }
 
 @media (prefers-color-scheme: dark) {

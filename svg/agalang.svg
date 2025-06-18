@@ -1,0 +1,27 @@
+<svg width="582" height="347" xmlns="http://www.w3.org/2000/svg" class="code">
+
+  <rect width="100%" height="100%" class="bg" />
+  <g font-family="Consolas, 'Courier New', monospace" font-size="13px">
+    <text x="10" y="16.5"><tspan class="keyword control">importa</tspan> <tspan class="string">':red'</tspan> <tspan class="keyword control">como</tspan> <tspan class="type">Red</tspan>;</text>
+    <text x="10" y="33.0"><tspan class="keyword control">importa</tspan> <tspan class="string">':proto/Cadena'</tspan> <tspan class="keyword control">como</tspan> <tspan class="type">Cadena</tspan>;</text>
+    <text x="10" y="49.5"></text>
+    <text x="10" y="66.0"><tspan class="keyword">asinc fn</tspan> <tspan class="function">servidorHTTP</tspan><tspan class="bracket-1">(</tspan><tspan class="variable">servidor</tspan>, <tspan class="variable">puerto</tspan><tspan class="bracket-1">)</tspan> <tspan class="bracket-1">&#123;</tspan></text>
+    <text x="25" y="82.5"><tspan class="keyword control">espera</tspan> <tspan class="type">Red</tspan>::<tspan class="function">servidorTCP</tspan><tspan class="bracket-2">(</tspan><tspan class="string">"127.0.0.1:{puerto}"</tspan>, <tspan class="keyword">asinc fn</tspan> <tspan class="bracket-3">(</tspan><tspan class="variable">req</tspan><tspan class="bracket-3">)</tspan> <tspan class="bracket-3">&#123;</tspan></text>
+    <text x="40" y="99.0"><tspan class="keyword">def</tspan> <tspan class="variable">res</tspan> = <tspan class="keyword control">espera</tspan> <tspan class="function">servidor</tspan><tspan class="bracket-1">(</tspan><tspan class="keyword control">espera</tspan> <tspan class="variable">req</tspan>::<tspan class="function">leer</tspan><tspan class="bracket-2">(</tspan><tspan class="bracket-2">)</tspan><tspan class="bracket-1">)</tspan></text>
+    <text x="40" y="115.5"><tspan class="keyword control">espera</tspan> <tspan class="variable">req</tspan>::<tspan class="function">escribir</tspan><tspan class="bracket-1">(</tspan><tspan class="variable">res</tspan><tspan class="bracket-1">)</tspan>;</text>
+    <text x="25" y="132.0"><tspan class="bracket-3">&#125;</tspan><tspan class="bracket-2">)</tspan>;</text>
+    <text x="10" y="148.5"><tspan class="bracket-1">&#125;</tspan>;</text>
+    <text x="10" y="165.0"></text>
+    <text x="10" y="181.5"><tspan class="keyword control">espera</tspan> <tspan class="function">servidorHTTP</tspan><tspan class="bracket-1">(</tspan><tspan class="keyword">asinc fn</tspan><tspan class="bracket-2">(</tspan><tspan class="variable">req</tspan><tspan class="bracket-2">)</tspan> <tspan class="bracket-2">&#123;</tspan></text>
+    <text x="25" y="198.0"><tspan class="type">Consola</tspan>::<tspan class="function">pintar</tspan><tspan class="bracket-3">(</tspan><tspan class="variable">req</tspan><tspan class="bracket-3">)</tspan>;</text>
+    <text x="25" y="214.5"><tspan class="keyword">const</tspan> <tspan class="variable">peticion_cruda</tspan> = <tspan class="type">Cadena</tspan><tspan class="bracket-3">(</tspan><tspan class="variable">req</tspan><tspan class="bracket-3">)</tspan>;</text>
+    <text x="25" y="231.0"><tspan class="keyword">const</tspan> <tspan class="variable">r</tspan> = <tspan class="variable">peticion_cruda</tspan>::<tspan class="function">reemplaza</tspan><tspan class="bracket-3">(</tspan><tspan class="string">'<tspan class="scape">\r</tspan>'</tspan>, <tspan class="string">''</tspan><tspan class="bracket-3">)</tspan>::<tspan class="function">partir</tspan><tspan class="bracket-3">(</tspan><tspan class="string"><tspan class="string"><tspan class="string"><tspan class="string">'<tspan class="scape">\n</tspan>'</tspan></tspan></tspan></tspan><tspan class="bracket-3">)</tspan>;</text>
+    <text x="25" y="247.5"><tspan class="keyword">def</tspan> <tspan class="variable">data</tspan> = <tspan class="variable">r</tspan><tspan class="bracket-3">[</tspan><tspan class="constant">0</tspan><tspan class="bracket-3">]</tspan>;</text>
+    <text x="25" y="264.0"><tspan class="keyword control">si</tspan><tspan class="bracket-3">(</tspan><tspan class="variable">data</tspan> == <tspan class="string">"GET /favicon.ico HTTP/1.1"</tspan><tspan class="bracket-3">)</tspan></text>
+    <text x="40" y="280.5"><tspan class="keyword control">ret</tspan> <tspan class="string">'HTTP/1.1 301<tspan class="scape">\n</tspan>'</tspan> +</text>
+    <text x="55" y="297.0"><tspan class="string">"Location: https://aga-mca.pages.dev/favicon.ico"</tspan>::<tspan class="function">bytes</tspan><tspan class="bracket-3">(</tspan><tspan class="bracket-3">)</tspan>;</text>
+    <text x="25" y="313.5"><tspan class="keyword control">ret</tspan> <tspan class="string">'HTTP/1.1 200<tspan class="scape">\n</tspan>Content-Type: text/plain; charset=utf-8<tspan class="scape">\n\n</tspan>'</tspan> +</text>
+    <text x="40" y="330.0"><tspan class="string">"¡Hola {data}!"</tspan>::<tspan class="function">bytes</tspan><tspan class="bracket-3">(</tspan><tspan class="bracket-3">)</tspan>;</text>
+    <text x="10" y="346.5"><tspan class="bracket-2">&#125;</tspan>, <tspan class="constant">80</tspan><tspan class="bracket-1">)</tspan>;</text>
+  </g>
+</svg>
