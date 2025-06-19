@@ -19,6 +19,35 @@
 		#cloud {
 			transform: translate(-100px);
 		}
+
+		&.code {
+			text { fill: #d4d4d4; }
+			.bg { fill: #1E1E1E; }
+			.bracket-1 { fill: #ffff00; }
+			.bracket-2 { fill: #d351c8; }
+			.bracket-3 { fill: #2e94e7; }
+			.variable { fill: #9CDCFE; }
+			.constant { fill: #b5cea8; }
+			.type { fill: #4EC9B0; }
+			.function { fill: #dcdcaa; }
+
+			.keyword {
+				fill: #569cd6;
+				font-style: italic;
+
+				&.control {
+					fill: #C586C0;
+				}
+			}
+
+			.string {
+				fill: #ce9178;
+
+				.scape {
+					fill: #ebc498;
+				}
+			}
+		}
 	}
 
 	&.animate {
@@ -79,6 +108,30 @@
 
 			#cloud {
 				transform: translate(-100px);
+			}
+			&.code {
+				text { fill: #d4d4d4; }
+				.bg { fill: #1E1E1E; }
+				.bracket-1 { fill: #ffff00; }
+				.bracket-2 { fill: #d351c8; }
+				.bracket-3 { fill: #2e94e7; }
+				.variable { fill: #9CDCFE; }
+				.constant { fill: #b5cea8; }
+				.type { fill: #4EC9B0; }
+				.function { fill: #dcdcaa; }
+
+				.keyword {
+					fill: #569cd6;
+					&.control {
+						fill: #C586C0;
+					}
+				}
+				.string {
+					fill: #ce9178;
+					.scape {
+						fill: #ebc498;
+					}
+				}
 			}
 		}
 
