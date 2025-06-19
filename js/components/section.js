@@ -3,13 +3,13 @@ export default class AgaSection extends HTMLElement {
     super();
   }
   connectedCallback() {
-    const attrId = this.getAttribute("data-id");
-    const attrName = this.getAttribute("data-name") || attrId;
-    const $title = document.createElement("h2");
-    $title.setAttribute("data-lang-key", attrName);
-    const $description = document.createElement("h3");
-    $description.setAttribute("data-lang-key", `${attrName}_description`);
-    const $container = document.createElement("div");
+    const attrId = this.getAttribute('data-id');
+    const attrName = this.getAttribute('data-name') || attrId;
+    const $title = document.createElement('h2');
+    $title.setAttribute('data-lang-key', attrName);
+    const $description = document.createElement('h3');
+    $description.setAttribute('data-lang-key', `${attrName}_description`);
+    const $container = document.createElement('div');
     $container.classList.add('container');
     [...this.children].forEach($child=>$container.appendChild($child));
     this.append($title);
@@ -17,4 +17,4 @@ export default class AgaSection extends HTMLElement {
     this.appendChild($container);
   }
 }
-customElements.define("aga-section", AgaSection)
+customElements.define('aga-section', AgaSection)

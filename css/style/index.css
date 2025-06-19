@@ -142,7 +142,7 @@ body {
 				flex-wrap: wrap;
 				justify-content: center;
 
-				>div, >aga-project {
+				>aga-project {
 					border-radius: 1em;
 					display: flex;
 					flex-direction: column;

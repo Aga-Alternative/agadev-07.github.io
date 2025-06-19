@@ -1,6 +1,6 @@
-import es from '../../locales/es.json' with {type:"json"};
-import en from '../../locales/en.json' with {type:"json"};
-import pt from '../../locales/pt.json' with {type:"json"};
+import es from '../../locales/es.json' with {type:'json'};
+import en from '../../locales/en.json' with {type:'json'};
+import pt from '../../locales/pt.json' with {type:'json'};
 
 export const translations = {es,en,pt};
 
@@ -18,10 +18,10 @@ export function useTranslate() {
 	const language = getLanguage();
 	const $html = document.documentElement;
 
-	const originalLang = $html.getAttribute("lang");
+	const originalLang = $html.getAttribute('lang');
 
 	if (originalLang === language) return;
-	$html.setAttribute("lang", language);
+	$html.setAttribute('lang', language);
 
 	if(localStorage.getItem('lang'))
 		document.querySelector('select#language-select').value = language;

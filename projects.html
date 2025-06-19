@@ -13,65 +13,17 @@
 </head>
 
 <body>
-	<header>
-		<h1 id="author"></h1>
-		<nav>
-			<ul></ul>
-		</nav>
-		<div>
-			<select id="language-select" data-lang-key="language_selector" data-lang-type="aria-label">
-				<option value="" data-lang-key="_navigator_"></option>
-				<option value="en" data-lang-key="_name_" data-lang="en"></option>
-				<option value="es" data-lang-key="_name_" data-lang="es"></option>
-				<option value="pt" data-lang-key="_name_" data-lang="pt"></option>
-			</select>
-			<button id="theme-button" data-lang-key="theme_button" data-lang-type="aria-label"><svg
-					src="themes.svg"></svg></button>
-		</div>
-	</header>
+	<aga-header></aga-header>
 	<main>
-		<section id="projects">
-			<h2 data-lang-key="main_projects"></h2>
-			<h3 data-lang-key="main_projects_description"></h3>
-			<div class="projects-container">
-				<div>
-					<h3 data-lang-key="agalang_title"></h3>
-					<img src="imgs/agalang.webp" data-lang-key="agalang_image" data-lang-type="alt" />
-					<p class="developed_in" data-lang-key="developed_in" data-lang-args="Rust"></p>
-					<p data-lang-key="agalang_description"></p>
-				</div>
-				<div>
-					<h3 data-lang-key="agamca_title"></h3>
-					<img src="imgs/agamca.webp" data-lang-key="agamca_image" data-lang-type="alt" />
-					<p class="developed_in" data-lang-key="developed_in" data-lang-args-and-list="HTML,CSS,JavaScript"></p>
-					<p data-lang-key="agamca_description"></p>
-				</div>
-			</div>
-		</section>
-		<section id="projects">
-			<h2 data-lang-key="secondary_projects"></h2>
-			<h3 data-lang-key="secondary_projects_description"></h3>
-			<div class="projects-container">
-				<div>
-					<h3 data-lang-key="agalang_title"></h3>
-					<img src="imgs/agalang.webp" data-lang-key="agalang_image" data-lang-type="alt" />
-					<p class="developed_in" data-lang-key="developed_in" data-lang-args="Rust"></p>
-					<p data-lang-key="agalang_description"></p>
-				</div>
-				<div>
-					<h3 data-lang-key="agalang_title"></h3>
-					<img src="imgs/agalang.webp" data-lang-key="agalang_image" data-lang-type="alt" />
-					<p class="developed_in" data-lang-key="developed_in" data-lang-args="Rust"></p>
-					<p data-lang-key="agalang_description"></p>
-				</div>
-				<div>
-					<h3 data-lang-key="agalang_title"></h3>
-					<img src="imgs/agalang.webp" data-lang-key="agalang_image" data-lang-type="alt" />
-					<p class="developed_in" data-lang-key="developed_in" data-lang-args="Rust"></p>
-					<p data-lang-key="agalang_description"></p>
-				</div>
-			</div>
-		</section>
+		<aga-section data-id="projects" data-name="secondary_projects">
+			<aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
+			<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
+		</aga-section>
+		<aga-section data-id="projects" data-name="main_projects">
+			<aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
+			<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
+			<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
+		</aga-section>
 	</main>
 	<footer></footer>
 </body>
