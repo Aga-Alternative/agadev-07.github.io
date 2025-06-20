@@ -7,6 +7,10 @@
 	box-sizing: border-box;
 }
 
+html, body {
+	height: 100%;
+}
+
 body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	background-color: var(--body-background-color);
@@ -16,6 +20,8 @@ body {
 	align-items: center;
 
 	>aga-header {
+		position: sticky;
+		top: 0;
 		background-color: var(--header-background-color);
 		width: 100%;
 		display: flex;
@@ -38,6 +44,7 @@ body {
 
 				>li {
 					padding: 10px;
+
 					>a {
 						height: 100%;
 						text-decoration: none;
@@ -129,6 +136,7 @@ body {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			margin-bottom: 3rem;
 
 			>h2 {
 				width: 100%;
@@ -176,19 +184,30 @@ body {
 	}
 
 	>footer {
-		position: fixed;
-		bottom: 0;
-		display: flex;
+		margin-top: auto;
 		width: 100%;
 
 		>p {
-			display: flex;
-			justify-content: center;
-			padding: 1rem 0;
-			width: 100%;
+			margin:auto;
 			text-align: center;
+			padding: 1rem 0;
 		}
 	}
+}
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: var(--project-background-color);
+	border-left: 1px red solid;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--body-background-color);
+	border-left: 1px red solid;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(255,0,0,.5);
 }
 
 svg {

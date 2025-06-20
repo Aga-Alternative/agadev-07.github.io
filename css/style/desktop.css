@@ -4,13 +4,4 @@
 }
 body > main {
 	width: 70%;
-	> header {
-		justify-content: space-between;
-		> div {
-			flex-direction: row;
-			> select {
-				padding: 0 1em;
-			}
-		}
-	}
 }

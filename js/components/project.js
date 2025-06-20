@@ -9,7 +9,7 @@ export default class AgaProject extends HTMLElement {
     const tagType = attrTypeImage == 'svg' ? 'svg' : 'img';
 
     // Si tiene elementos ya fue inicializado
-    if(this.childElementCount) return;
+    if (this.childElementCount) return;
 
     const $h3 = document.createElement('h3');
     $h3.setAttribute('data-lang-key', `${attrName}_title`);
@@ -18,6 +18,11 @@ export default class AgaProject extends HTMLElement {
     const imageSrc = `${tagType}/${attrName}.${attrTypeImage}`;
     const $image = document.createElement(tagType);
     $image.setAttribute('src', imageSrc);
+    if (tagType == 'img') {
+      $image.setAttribute("data-lang-key", "language_selector");
+      $image.setAttribute("data-lang-type", "alt");
+      $image.setAttribute("draggable", "false")
+    }
     this.appendChild($image);
 
     const $p_developedIn = document.createElement('p');

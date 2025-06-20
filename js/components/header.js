@@ -38,6 +38,8 @@ export default class AgaHeader extends HTMLElement {
     const $div = document.createElement('div')
 
     const $languageSelector = document.createElement('select');
+    $languageSelector.setAttribute("data-lang-key", "language_selector");
+    $languageSelector.setAttribute("data-lang-type", "aria-label")
     const $navigator = document.createElement('option');
     $navigator.setAttribute('value', '');
     $navigator.setAttribute('data-lang-key', '_navigator_');
@@ -52,6 +54,8 @@ export default class AgaHeader extends HTMLElement {
     }
     $div.appendChild($languageSelector);
     const $themeButton = document.createElement('button');
+    $themeButton.setAttribute("data-lang-key", "theme_button");
+    $themeButton.setAttribute("data-lang-type", "aria-label")
     const $svg = document.createElement('svg');
     $svg.setAttribute('src', 'svg/themes.svg');
     $themeButton.appendChild($svg);
