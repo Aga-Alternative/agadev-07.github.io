@@ -1,3 +1,4 @@
+import './components/index.js';
 import { setInterface } from './interface.js';
 import { loadEvents } from './interactions.js';
 import { useTheme } from './utils/theme.js';

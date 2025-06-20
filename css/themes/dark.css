@@ -1,39 +1,94 @@
 @import url('../animations.css');
-:root[theme='dark'] {
+
+:root[data-theme='dark'] {
 	--body-background-color: #353535;
 	--body-color: #b6b6b6;
 	--header-background-color: #252525;
 	--header-hover-background-color: #161616;
 	--project-background-color: #272727;
 
-	& svg {
+	svg {
 		#dark {
-			animation: fade-in 1s ease-in-out forwards;
-			transform-box: fill-box;
-			transform-origin: center;
-			#moon {
-				animation: moon-slide-in 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-			}
+			opacity: 1;
 		}
+
 		#light {
-			animation: fade-out 1s ease-in-out forwards;
-			transform-box: fill-box;
-			transform-origin: center;
-			#sun {
-				animation: sun-slide-out 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-			}
+			opacity: 0;
 		}
+
 		#cloud {
-			animation: cloud-slide-left 1s ease-in-out forwards;
-			transform-box: fill-box;
-			transform-origin: center;
+			transform: translate(-100px);
+		}
+
+		&.code {
+			text { fill: #d4d4d4; }
+			.bg { fill: #1E1E1E; }
+			.bracket-1 { fill: #ffff00; }
+			.bracket-2 { fill: #d351c8; }
+			.bracket-3 { fill: #2e94e7; }
+			.variable { fill: #9CDCFE; }
+			.constant { fill: #b5cea8; }
+			.type { fill: #4EC9B0; }
+			.function { fill: #dcdcaa; }
+
+			.keyword {
+				fill: #569cd6;
+				font-style: italic;
+
+				&.control {
+					fill: #C586C0;
+				}
+			}
+
+			.string {
+				fill: #ce9178;
+
+				.scape {
+					fill: #ebc498;
+				}
+			}
 		}
 	}
+
+	&.animate {
+		svg {
+			#dark {
+				animation: fade-in 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+
+				#moon {
+					animation: moon-slide-in 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+				}
+			}
+
+			#light {
+				animation: fade-out 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+
+				#sun {
+					animation: sun-slide-out 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+				}
+			}
+
+			#cloud {
+				animation: cloud-slide-left 1s ease-in-out forwards;
+				transform-box: fill-box;
+				transform-origin: center;
+			}
+		}
+	}
+
+	img[data-lang-key=agalang_image] {
+		content: url(../../imgs/agalang.webp);
+	}
 }
+
 @media (prefers-color-scheme: dark) {
 	:root {
 		--body-background-color: #353535;
@@ -42,31 +97,75 @@
 		--header-hover-background-color: #161616;
 		--project-background-color: #272727;
 
-		& svg {
+		svg {
 			#dark {
-				animation: fade-in 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-				#moon {
-					animation: moon-slide-in 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
-				}
+				opacity: 1;
 			}
+
 			#light {
-				animation: fade-out 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-				#sun {
-					animation: sun-slide-out 1s ease-in-out forwards;
+				opacity: 0;
+			}
+
+			#cloud {
+				transform: translate(-100px);
+			}
+			&.code {
+				text { fill: #d4d4d4; }
+				.bg { fill: #1E1E1E; }
+				.bracket-1 { fill: #ffff00; }
+				.bracket-2 { fill: #d351c8; }
+				.bracket-3 { fill: #2e94e7; }
+				.variable { fill: #9CDCFE; }
+				.constant { fill: #b5cea8; }
+				.type { fill: #4EC9B0; }
+				.function { fill: #dcdcaa; }
+
+				.keyword {
+					fill: #569cd6;
+					&.control {
+						fill: #C586C0;
+					}
+				}
+				.string {
+					fill: #ce9178;
+					.scape {
+						fill: #ebc498;
+					}
+				}
+			}
+		}
+
+		&.animate {
+			svg {
+				#dark {
+					animation: fade-in 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+
+					#moon {
+						animation: moon-slide-in 1s ease-in-out forwards;
+						transform-box: fill-box;
+						transform-origin: center;
+					}
+				}
+
+				#light {
+					animation: fade-out 1s ease-in-out forwards;
+					transform-box: fill-box;
+					transform-origin: center;
+
+					#sun {
+						animation: sun-slide-out 1s ease-in-out forwards;
+						transform-box: fill-box;
+						transform-origin: center;
+					}
+				}
+
+				#cloud {
+					animation: cloud-slide-left 1s ease-in-out forwards;
 					transform-box: fill-box;
 					transform-origin: center;
 				}
-			}
-			#cloud {
-				animation: cloud-slide-left 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
 			}
 		}
 	}

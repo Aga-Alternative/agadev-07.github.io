@@ -1,45 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<meta
-			name="description"
-			content="AgaDev portfolio 404"
-		/>
-		<meta
-			name="keywords"
-			content="HTML,CSS,JavaScript,AgaDev"
-		/>
-		<title></title>
 
-		<link
-			rel="stylesheet"
-			href="/css/index.css"
-		/>
-	</head>
-	<body>
-		<header>
-			<h1 id="author"></h1>
-			<nav><ul></ul></nav>
-			<div>
-				<select id="language-select" data-lang-key="language_selector" data-lang-type="aria-label">
-					<option value="" data-lang-key="_navigator_"></option>
-					<option value="en" data-lang-key="_name_" data-lang="en"></option>
-					<option value="es" data-lang-key="_name_" data-lang="es"></option>
-					<option value="pt" data-lang-key="_name_" data-lang="pt"></option>
-				</select>
-				<button id="theme-button" data-lang-key="theme_button" data-lang-type="aria-label"></button>
-			</div>
-		</header>
-		<main>
-			<section id="error">
-				<h2 id="error-message" data-lang-key="error_404"></h2>
-				<h3 id="message-error" data-lang-key="error_404_msg"></h3>
-			</section>
-    </main>
-		<footer></footer>
-	</body>
-  <script src="/js/index.js" type="module"></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="description" content="AgaDev portfolio 404" />
+	<link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+	<aga-header></aga-header>
+	<main>
+		<section id="error">
+			<h2 id="error-message" data-lang-key="error_404"></h2>
+			<h3 id="message-error" data-lang-key="error_404_msg"></h3>
+		</section>
+	</main>
+	<footer></footer>
+</body>
+<script src="js/index.js" type="module"></script>
+
 </html>

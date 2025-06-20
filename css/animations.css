@@ -38,3 +38,6 @@
 	from { opacity: 1; }
 	to   { opacity: 0; }
 }
+:root.animate * {
+  transition: background-color 1s ease, color 1s ease, fill 1s ease;
+}
