@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="88" height="88" id="aga-logo">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 88 88" id="aga-logo">
   <defs>
     <clipPath id="hexClip">
       <path d="M 44,0 L 6.9,22 L 6.9,66 L 44,88 L 81.1,66 L 81.1,22 Z" />

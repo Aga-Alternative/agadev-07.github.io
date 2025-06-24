@@ -38,7 +38,6 @@ export function useTranslate() {
 			const args = $el.getAttribute('data-lang-args-and-list').split(',');
 			const comma = getTranslation(lang, 'comma')
 			const and = getTranslation(lang, 'and')
-			console.log(args);
 			if (args.length > 1) {
 				const last = args.pop();
   			let result = args[0];

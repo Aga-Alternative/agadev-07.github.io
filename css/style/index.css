@@ -7,7 +7,8 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
 	height: 100%;
 }
 
@@ -20,36 +21,46 @@ body {
 	align-items: center;
 
 	>aga-header {
-		position: sticky;
 		top: 0;
 		background-color: var(--header-background-color);
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
+		align-content: center;
 		justify-content: space-around;
 		box-shadow: 0 0 5px red;
 
-		>h1 {
+		>div {
 			display: flex;
-			justify-content: center;
+			align-items: center;
+
+			>svg {
+				height: 2.3em;
+			}
 		}
 
 		>nav {
+			transform: translateX(calc(50% - (111px * 2) / 2));
 			>ul {
 				height: 100%;
+				width: 100%;
 				list-style: none;
 				display: flex;
-				justify-content: space-between;
 
 				>li {
+					width: 111px;
+					box-sizing: content-box;
 					padding: 10px;
+					text-align: center;
 
 					>a {
+						display: block;
 						height: 100%;
 						text-decoration: none;
 						color: var(--body-color);
-						font-size: 1rem;
+						font-size: 1.5em;
+						font-weight: bold;
 					}
 
 					&:hover {
@@ -150,13 +161,29 @@ body {
 				flex-wrap: wrap;
 				justify-content: center;
 
+				>a {
+					width: calc((100% / var(--project-card-items)) - (var(--project-card-margin) * 2));
+					margin: var(--project-card-margin);
+					color: var(--body-color);
+					text-decoration: none;
+
+					>aga-project {
+						width: 100%;
+						height: 100%;
+					}
+				}
+
+				>aga-project {
+					margin: var(--project-card-margin);
+					width: calc((100% / var(--project-card-items)) - (var(--project-card-margin) * 2));
+				}
+
+				>a>aga-project,
 				>aga-project {
 					border-radius: 1em;
 					display: flex;
 					flex-direction: column;
 					padding: 1em;
-					margin: var(--project-card-margin);
-					width: calc((100% / var(--project-card-items)) - (var(--project-card-margin) * 2));
 					background-color: var(--project-background-color);
 
 					>h3 {
@@ -188,26 +215,30 @@ body {
 		width: 100%;
 
 		>p {
-			margin:auto;
+			margin: auto;
 			text-align: center;
 			padding: 1rem 0;
 		}
 	}
 }
+
 ::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
 }
+
 ::-webkit-scrollbar-track {
 	background: var(--project-background-color);
 	border-left: 1px red solid;
 }
+
 ::-webkit-scrollbar-thumb {
 	background: var(--body-background-color);
 	border-left: 1px red solid;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-	background: rgba(255,0,0,.5);
+	background: rgba(255, 0, 0, .5);
 }
 
 svg {

@@ -1,14 +1,20 @@
 import { AUTHOR } from '../data.js';
 import { replaceTheme } from '../utils/theme.js';
-import { translations } from '../utils/translate.js';
+import { setLanguage, translations } from '../utils/translate.js';
 
 export default class AgaHeader extends HTMLElement {
   constructor() {
     super();
 
+    const $info = document.createElement('div');
+    const $logo = document.createElement('svg');
+    $logo.setAttribute('src', 'logo.svg')
+    $info.appendChild($logo)
+
     const $author = document.createElement('h1');
     $author.textContent = AUTHOR;
-    this.appendChild($author);
+    $info.appendChild($author);
+    this.appendChild($info);
 
     const $nav = document.createElement('nav');
     const $ul = document.createElement('ul');
@@ -23,13 +29,11 @@ export default class AgaHeader extends HTMLElement {
     for (const [link, translate] of Interface.nav) {
       const $li = document.createElement('li');
       const $a = document.createElement('a');
-      const $h2 = document.createElement('h2');
 
-      $li.appendChild($a);
-      $a.appendChild($h2);
       $a.href = link;
-      $h2.setAttribute('data-lang-key', translate)
-
+      $a.setAttribute('data-lang-key', translate)
+      
+      $li.appendChild($a);
       $ul.appendChild($li);
     };
     $nav.appendChild($ul);
@@ -38,6 +42,7 @@ export default class AgaHeader extends HTMLElement {
     const $div = document.createElement('div')
 
     const $languageSelector = document.createElement('select');
+    $languageSelector.id = "language-select";
     $languageSelector.setAttribute("data-lang-key", "language_selector");
     $languageSelector.setAttribute("data-lang-type", "aria-label")
     const $navigator = document.createElement('option');
@@ -52,6 +57,7 @@ export default class AgaHeader extends HTMLElement {
       $lang.setAttribute('data-lang-key', '_name_');
       $languageSelector?.appendChild($lang)
     }
+    $languageSelector.addEventListener("change", setLanguage);  
     $div.appendChild($languageSelector);
     const $themeButton = document.createElement('button');
     $themeButton.setAttribute("data-lang-key", "theme_button");
