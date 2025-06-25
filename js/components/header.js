@@ -2,13 +2,22 @@ import { AUTHOR } from '../data.js';
 import { replaceTheme } from '../utils/theme.js';
 import { setLanguage, translations } from '../utils/translate.js';
 
+const LOGO = "svg/logo.svg";
+const THEMES = 'svg/themes.svg';
+const NAVIGATOR = [
+    ['/', 'home'],
+    //	['/about', 'about'],
+    //	['/contact', 'contact'],
+    ['/projects', 'projects'],
+  ];
+
 export default class AgaHeader extends HTMLElement {
   constructor() {
     super();
 
     const $info = document.createElement('div');
     const $logo = document.createElement('svg');
-    $logo.setAttribute('src', 'logo.svg')
+    $logo.setAttribute('src', LOGO)
     $info.appendChild($logo)
 
     const $author = document.createElement('h1');
@@ -18,15 +27,7 @@ export default class AgaHeader extends HTMLElement {
 
     const $nav = document.createElement('nav');
     const $ul = document.createElement('ul');
-    const Interface = {
-      nav: [
-        ['/', 'home'],
-        //	['/about', 'about'],
-        //	['/contact', 'contact'],
-        ['/projects', 'projects'],
-      ],
-    };
-    for (const [link, translate] of Interface.nav) {
+    for (const [link, translate] of NAVIGATOR) {
       const $li = document.createElement('li');
       const $a = document.createElement('a');
 
@@ -63,7 +64,7 @@ export default class AgaHeader extends HTMLElement {
     $themeButton.setAttribute("data-lang-key", "theme_button");
     $themeButton.setAttribute("data-lang-type", "aria-label")
     const $svg = document.createElement('svg');
-    $svg.setAttribute('src', 'svg/themes.svg');
+    $svg.setAttribute('src', THEMES);
     $themeButton.appendChild($svg);
     $themeButton.addEventListener('click', () => {
       $themeButton.setAttribute('disabled', '');

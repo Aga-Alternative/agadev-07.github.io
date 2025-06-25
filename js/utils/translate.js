@@ -1,8 +1,9 @@
 import es from '../../locales/es.json' with {type:'json'};
 import en from '../../locales/en.json' with {type:'json'};
 import pt from '../../locales/pt.json' with {type:'json'};
+import ko from '../../locales/ko.json' with {type:'json'};
 
-export const translations = {es,en,pt};
+export const translations = {es,en,pt,ko};
 
 
 export function getTranslation(lang, key) {

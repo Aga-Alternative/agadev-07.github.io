@@ -1,74 +1,121 @@
 @media screen and (max-width: 1200px) {
-	body > main {
+	body>main {
 		width: 80%;
 	}
 }
+
 @media screen and (max-width: 880px) {
 	body {
-		> header {
+		>header {
 			flex-direction: row;
 			align-items: center;
-			> h1 {
+
+			>h1 {
 				width: 100%;
 			}
-			> div {
+
+			>div {
 				flex-direction: row;
-				> select,
-				> button {
+
+				>select,
+				>button {
 					padding: 1rem;
 				}
 			}
-			> nav > ul {
+
+			>nav>ul {
 				padding: 1rem;
 				flex-wrap: wrap;
-				> li {
+
+				>li {
 					width: 50%;
-					> a {
+
+					>a {
 						width: 100%;
 					}
 				}
 			}
 		}
-		> main {
+
+		>main {
 			width: 90%;
 		}
 	}
 }
+
 @media screen and (max-width: 700px) {
 	:root {
 		--project-card-items: 1;
 	}
-	body > main {
+
+	body>main {
 		width: 90%;
+
+		>aga-section[data-id="projects"]>div.container {
+
+			>a>aga-project,
+			>aga-project {
+				&:last-child:nth-child(odd) {
+					flex-direction: column !important;
+
+					/* Aqui a diferencia de en index se utiliza div para aumentar la importancia */
+					>svg,
+					>img {
+						margin: 2.5em 0 0 0 !important;
+						width: 100% !important;
+					}
+
+					>div.body {
+						margin-left: 0;
+						width: 100%;
+						>h3 {
+							position: absolute;
+						}
+						>div.description {
+							display: block;
+							>p {
+								width: 100% !important;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
+
 @media screen and (max-width: 600px) {
 	body {
-		> header {
+		>header {
 			flex-direction: column;
 			align-items: center;
 
-			> nav > ul {
+			>nav>ul {
 				padding: 1rem;
 				flex-wrap: wrap;
-				> li {
+
+				>li {
 					width: 50%;
-					> a {
+
+					>a {
 						width: 100%;
 					}
 				}
 			}
 		}
-		> main {
+
+		>main {
 			width: 90%;
 		}
 	}
 }
+
 @media screen and (max-width: 570px) {
 	body {
-		> header {
+		>header {
 			justify-content: center;
-			> div {
+
+			>div {
 				flex-direction: row;
 				width: 100%;
 				justify-content: center;

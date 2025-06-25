@@ -37,16 +37,18 @@ body {
 
 			>svg {
 				height: 2.3em;
+				padding: 0 10px;
 			}
 		}
 
 		>nav {
-			transform: translateX(calc(50% - (111px * 2) / 2));
 			>ul {
 				height: 100%;
 				width: 100%;
 				list-style: none;
-				display: flex;
+				/*Para mantener centrado los botones de navegacion */
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
 
 				>li {
 					width: 111px;
@@ -185,25 +187,67 @@ body {
 					flex-direction: column;
 					padding: 1em;
 					background-color: var(--project-background-color);
+					position: relative;
 
-					>h3 {
-						margin-bottom: 0.3em;
-						font-size: 1.5em;
+					/* Pura magia negra para estilizar el ultimo elemento cuando es impar*/
+					/* vscode nisiquiera lo reconoce al momento de escribir este estilo */
+					&:last-child:nth-child(odd) {
+						flex-direction: row;
+						/* si --project-card-items es 1 entonces es igual*/
+						width: calc(100% - (var(--project-card-margin) * 4));
+
+						>img,
+						>svg {
+							margin-top: 0;
+							margin-right: var(--project-card-margin);
+							width: 37.5%;
+						}
+
+						>.body {
+							margin-left: var(--project-card-margin);
+							width: 62.5%;
+							>h3 {
+								position: static;
+							}
+
+							>.description {
+								display: flex;
+								flex-direction: row-reverse;
+								>p {
+									width: 60%;
+
+									&.developed-in {
+										width: 40%;
+									}
+								}
+							}
+						}
 					}
 
 					>img,
 					>svg {
 						border-radius: 0.5em;
+						margin-top: 2.5em;
 						width: 100%;
 						aspect-ratio: 582 / 347;
 						height: auto;
 					}
 
-					>p.developed-in {
-						margin: 0.5em 0.5em 0 0;
-						font-size: 0.8em;
-						text-align: right;
-						font-weight: bold;
+					>.body {
+						>h3 {
+							position: absolute;
+							top: 0.7em;
+							width: 100%;
+							font-size: 1.5em;
+							margin-bottom: 0.3em;
+						}
+
+						>.description>p.developed-in {
+							margin: 0.5em 0.5em 0 0;
+							font-size: 0.8em;
+							text-align: right;
+							font-weight: bold;
+						}
 					}
 				}
 			}
