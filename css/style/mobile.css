@@ -51,7 +51,7 @@
 	body>main {
 		width: 90%;
 
-		>aga-section[data-id="projects"]>div.container {
+		>aga-section[data-type="projects"]>div.container {
 
 			>a>aga-project,
 			>aga-project {

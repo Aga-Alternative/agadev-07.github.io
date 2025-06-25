@@ -5,8 +5,8 @@ export default class AgaSection extends HTMLElement {
     super();
   }
   connectedCallback() {
-    const attrId = this.getAttribute('data-id');
-    const attrName = this.getAttribute('data-name') || attrId;
+    const attrType = this.getAttribute('data-type');
+    const attrName = this.getAttribute('data-name') || attrType;
     const $title = document.createElement('h2');
     $title.setAttribute('data-lang-key', attrName);
     const $description = document.createElement('h3');
