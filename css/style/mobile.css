@@ -55,7 +55,7 @@
 
 			>a>aga-project,
 			>aga-project {
-				&:last-child:nth-child(odd) {
+				&.last-odd {
 					flex-direction: column !important;
 
 					/* Aqui a diferencia de en index se utiliza div para aumentar la importancia */

@@ -189,9 +189,7 @@ body {
 					background-color: var(--project-background-color);
 					position: relative;
 
-					/* Pura magia negra para estilizar el ultimo elemento cuando es impar*/
-					/* vscode nisiquiera lo reconoce al momento de escribir este estilo */
-					&:last-child:nth-child(odd) {
+					&.last-odd {
 						flex-direction: row;
 						/* si --project-card-items es 1 entonces es igual*/
 						width: calc(100% - (var(--project-card-margin) * 4));
