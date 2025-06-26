@@ -16,8 +16,8 @@ body>main {
 				grid-template:
 					"image title title" 2.5rem
 					"image description developed-in" auto
-					/ 3fr 3fr 2fr;
-				gap: var(--project-card-margin);
+					/ 4fr 3fr 2fr;
+				gap: calc(var(--project-card-margin) * 2);
 				width: 100%;
 
 				>h3 {

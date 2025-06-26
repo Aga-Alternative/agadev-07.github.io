@@ -183,6 +183,8 @@ body {
 				>a>aga-project,
 				>aga-project {
 					border-radius: 1em;
+					/* Como se puede observar en commits anteriores se uso flex pero agregaba mucha complejidad sintactica */
+					/* Se decidio cambiar a grid por su simplicidad a la hora de editar los contenedores */
 					display: grid;
 					grid-template-areas:
 						"title"
