@@ -3,8 +3,7 @@
 :root[data-theme='dark'] {
 	--body-background-color: #353535;
 	--body-color: #b6b6b6;
-	--header-background-color: #252525;
-	--header-hover-background-color: #161616;
+	--header-background-color: #11111180;
 	--project-background-color: #272727;
 
 	svg {
@@ -21,15 +20,41 @@
 		}
 
 		&.code {
-			text { fill: #d4d4d4; }
-			.bg { fill: #1E1E1E; }
-			.bracket-1 { fill: #ffff00; }
-			.bracket-2 { fill: #d351c8; }
-			.bracket-3 { fill: #2e94e7; }
-			.variable { fill: #9CDCFE; }
-			.constant { fill: #b5cea8; }
-			.type { fill: #4EC9B0; }
-			.function { fill: #dcdcaa; }
+			text {
+				fill: #d4d4d4;
+			}
+
+			.bg {
+				fill: #1E1E1E;
+			}
+
+			.bracket-1 {
+				fill: #ffff00;
+			}
+
+			.bracket-2 {
+				fill: #d351c8;
+			}
+
+			.bracket-3 {
+				fill: #2e94e7;
+			}
+
+			.variable {
+				fill: #9CDCFE;
+			}
+
+			.constant {
+				fill: #b5cea8;
+			}
+
+			.type {
+				fill: #4EC9B0;
+			}
+
+			.function {
+				fill: #dcdcaa;
+			}
 
 			.keyword {
 				fill: #569cd6;
@@ -93,8 +118,7 @@
 	:root {
 		--body-background-color: #353535;
 		--body-color: #b6b6b6;
-		--header-background-color: #252525;
-		--header-hover-background-color: #161616;
+		--header-background-color: #11111180;
 		--project-background-color: #272727;
 
 		svg {
@@ -109,25 +133,55 @@
 			#cloud {
 				transform: translate(-100px);
 			}
+
 			&.code {
-				text { fill: #d4d4d4; }
-				.bg { fill: #1E1E1E; }
-				.bracket-1 { fill: #ffff00; }
-				.bracket-2 { fill: #d351c8; }
-				.bracket-3 { fill: #2e94e7; }
-				.variable { fill: #9CDCFE; }
-				.constant { fill: #b5cea8; }
-				.type { fill: #4EC9B0; }
-				.function { fill: #dcdcaa; }
+				text {
+					fill: #d4d4d4;
+				}
+
+				.bg {
+					fill: #1E1E1E;
+				}
+
+				.bracket-1 {
+					fill: #ffff00;
+				}
+
+				.bracket-2 {
+					fill: #d351c8;
+				}
+
+				.bracket-3 {
+					fill: #2e94e7;
+				}
+
+				.variable {
+					fill: #9CDCFE;
+				}
+
+				.constant {
+					fill: #b5cea8;
+				}
+
+				.type {
+					fill: #4EC9B0;
+				}
+
+				.function {
+					fill: #dcdcaa;
+				}
 
 				.keyword {
 					fill: #569cd6;
+
 					&.control {
 						fill: #C586C0;
 					}
 				}
+
 				.string {
 					fill: #ce9178;
+
 					.scape {
 						fill: #ebc498;
 					}
