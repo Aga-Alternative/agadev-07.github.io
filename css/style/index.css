@@ -254,17 +254,9 @@ body {
 }
 
 html {
+	/* Scroll de firefox */
 	scrollbar-width: thin;
-	/* Grosor de la barra de desplazamiento */
 	scrollbar-color: var(--body-background-color) var(--project-background-color);
-	/* Color de la barra y el track */
-}
-
-html:hover {
-	scrollbar-width: thin;
-	/* Grosor de la barra de desplazamiento */
-	scrollbar-color: red var(--project-background-color);
-	/* Color de la barra y el track */
 }
 
 svg {

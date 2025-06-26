@@ -13,11 +13,10 @@ body>main {
 		>a>aga-project,
 		>aga-project {
 			&.last-odd {
-				grid-template-areas:
-					"image title title"
-					"image description developed-in";
-				grid-template-columns: 3fr 3fr 2fr;
-				grid-template-rows: 2.5rem auto;
+				grid-template:
+					"image title title" 2.5rem
+					"image description developed-in" auto
+					/ 3fr 3fr 2fr;
 				gap: var(--project-card-margin);
 				width: 100%;
 
