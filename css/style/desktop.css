@@ -2,6 +2,29 @@
 	--project-card-items: 2;
 	--project-card-margin: 0.5em;
 }
-body > main {
+
+body>main {
 	width: 70%;
+}
+
+@media screen and (width > 700px) {
+	body>main>aga-section[data-type="projects"]>div.container {
+
+		>a>aga-project,
+		>aga-project {
+			&.last-odd {
+				grid-template-areas:
+					"image title title"
+					"image description developed-in";
+				grid-template-columns: 3fr 3fr 2fr;
+				grid-template-rows: 2.5rem auto;
+				gap: var(--project-card-margin);
+				width: 100%;
+
+				>h3 {
+					text-align: center;
+				}
+			}
+		}
+	}
 }

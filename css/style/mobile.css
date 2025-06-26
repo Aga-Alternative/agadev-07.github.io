@@ -50,37 +50,6 @@
 
 	body>main {
 		width: 90%;
-
-		>aga-section[data-type="projects"]>div.container {
-
-			>a>aga-project,
-			>aga-project {
-				&.last-odd {
-					flex-direction: column !important;
-
-					/* Aqui a diferencia de en index se utiliza div para aumentar la importancia */
-					>svg,
-					>img {
-						margin: 2.5em 0 0 0 !important;
-						width: 100% !important;
-					}
-
-					>div.body {
-						margin-left: 0;
-						width: 100%;
-						>h3 {
-							position: absolute;
-						}
-						>div.description {
-							display: block;
-							>p {
-								width: 100% !important;
-							}
-						}
-					}
-				}
-			}
-		}
 	}
 }
 

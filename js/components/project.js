@@ -11,13 +11,6 @@ export default class AgaProject extends HTMLElement {
     // Si tiene elementos ya fue inicializado
     if (this.childElementCount) return;
 
-    const $body = document.createElement('div');
-    $body.className = 'body';
-
-    const $h3 = document.createElement('h3');
-    $h3.setAttribute('data-lang-key', `${attrName}_title`);
-    $body.appendChild($h3);
-
     const imageSrc = `${tagType}/${attrName}.${attrTypeImage}`;
     const $image = document.createElement(tagType);
     $image.setAttribute('src', imageSrc);
@@ -28,8 +21,9 @@ export default class AgaProject extends HTMLElement {
     }
     this.appendChild($image);
 
-    const $descriptionContainer = document.createElement('div');
-    $descriptionContainer.className = 'description';
+    const $h3 = document.createElement('h3');
+    $h3.setAttribute('data-lang-key', `${attrName}_title`);
+    this.appendChild($h3);
 
     const $p_developedIn = document.createElement('p');
     $p_developedIn.classList.add('developed-in');
@@ -38,14 +32,11 @@ export default class AgaProject extends HTMLElement {
     else
       $p_developedIn.setAttribute('data-lang-args', attrLangs)
     $p_developedIn.setAttribute('data-lang-key', 'developed_in');
-    $descriptionContainer.appendChild($p_developedIn);
-  
+    this.appendChild($p_developedIn);
+
     const $description = document.createElement('p');
     $description.setAttribute('data-lang-key', `${attrName}_description`);
-    $descriptionContainer.appendChild($description);
-
-    $body.appendChild($descriptionContainer);
-    this.appendChild($body);
+    this.appendChild($description);
   }
 }
 customElements.define('aga-project', AgaProject)

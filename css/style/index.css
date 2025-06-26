@@ -183,68 +183,39 @@ body {
 				>a>aga-project,
 				>aga-project {
 					border-radius: 1em;
-					display: flex;
-					flex-direction: column;
+					display: grid;
+					grid-template-areas:
+						"title"
+						"image"
+						"developed-in"
+						"description";
 					padding: 1em;
 					background-color: var(--project-background-color);
-					position: relative;
-
-					&.last-odd {
-						flex-direction: row;
-						/* si --project-card-items es 1 entonces es igual*/
-						width: calc(100% - (var(--project-card-margin) * 4));
-
-						>img,
-						>svg {
-							margin-top: 0;
-							margin-right: var(--project-card-margin);
-							width: 37.5%;
-						}
-
-						>.body {
-							margin-left: var(--project-card-margin);
-							width: 62.5%;
-							>h3 {
-								position: static;
-							}
-
-							>.description {
-								display: flex;
-								flex-direction: row-reverse;
-								>p {
-									width: 60%;
-
-									&.developed-in {
-										width: 40%;
-									}
-								}
-							}
-						}
-					}
 
 					>img,
 					>svg {
 						border-radius: 0.5em;
-						margin-top: 2.5em;
-						width: 100%;
 						aspect-ratio: 582 / 347;
 						height: auto;
+						width: 100%;
+						grid-area: image;
 					}
 
-					>.body {
-						>h3 {
-							position: absolute;
-							top: 0.7em;
-							width: 100%;
-							font-size: 1.5em;
-							margin-bottom: 0.3em;
-						}
+					>h3 {
+						font-size: 1.5em;
+						margin-bottom: 0.3em;
+						grid-area: title;
+					}
 
-						>.description>p.developed-in {
+					>p {
+						grid-area: description;
+
+						&.developed-in {
 							margin: 0.5em 0.5em 0 0;
 							font-size: 0.8em;
 							text-align: right;
 							font-weight: bold;
+							grid-area: developed-in;
 						}
 					}
 				}
@@ -266,7 +237,6 @@ body {
 
 ::-webkit-scrollbar {
 	width: 10px;
-	height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -281,6 +251,20 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
 	background: rgba(255, 0, 0, .5);
+}
+
+html {
+	scrollbar-width: thin;
+	/* Grosor de la barra de desplazamiento */
+	scrollbar-color: var(--body-background-color) var(--project-background-color);
+	/* Color de la barra y el track */
+}
+
+html:hover {
+	scrollbar-width: thin;
+	/* Grosor de la barra de desplazamiento */
+	scrollbar-color: red var(--project-background-color);
+	/* Color de la barra y el track */
 }
 
 svg {
