@@ -3,7 +3,7 @@
 :root[data-theme='light'] {
 	--body-background-color: #dadada;
 	--body-color: #333333;
-	--header-background-color: #e0e0e080;#ff000040
+	--header-background-color: #e0e0e080;
 	--project-background-color: #c1c1c1;
 
 	svg {

@@ -11,6 +11,8 @@ export default class AgaProject extends HTMLElement {
     // Si tiene elementos ya fue inicializado
     if (this.childElementCount) return;
 
+    const $imageWrapper = document.createElement("div");
+    $imageWrapper.className = "image-wrapper";
     const imageSrc = `${tagType}/${attrName}.${attrTypeImage}`;
     const $image = document.createElement(tagType);
     $image.setAttribute('src', imageSrc);
@@ -19,7 +21,8 @@ export default class AgaProject extends HTMLElement {
       $image.setAttribute("data-lang-type", "alt");
       $image.setAttribute("draggable", "false")
     }
-    this.appendChild($image);
+    $imageWrapper.appendChild($image);
+    this.appendChild($imageWrapper);
 
     const $h3 = document.createElement('h3');
     $h3.setAttribute('data-lang-key', `${attrName}_title`);

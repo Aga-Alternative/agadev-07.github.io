@@ -13,6 +13,8 @@ body {
 }
 
 body {
+	--image-scale: 1;
+
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	background-color: var(--body-background-color);
 	color: var(--body-color);
@@ -175,12 +177,14 @@ body {
 					text-decoration: none;
 
 					>aga-project {
+						--image-hover-scale: 1.1;
 						width: 100%;
 						height: 100%;
 					}
 				}
 
 				>aga-project {
+					--image-hover-scale: 1.05;
 					margin: var(--project-card-margin);
 					width: calc((100% / var(--project-card-items)) - (var(--project-card-margin) * 2));
 				}
@@ -199,13 +203,20 @@ body {
 					padding: 1em;
 					background-color: var(--project-background-color);
 
-					>img,
-					>svg {
+					>div.image-wrapper {
+						overflow: hidden;
 						border-radius: 0.5em;
 						aspect-ratio: 582 / 347;
-						height: auto;
-						width: 100%;
 						grid-area: image;
+
+						>img,
+						>svg {
+							height: auto;
+							width: 100%;
+							transition: transform 0.3s ease;
+							transform-origin: center;
+							transform: scale(var(--image-scale));
+						}
 					}
 
 					>h3 {
@@ -224,6 +235,10 @@ body {
 							font-weight: bold;
 							grid-area: developed-in;
 						}
+					}
+
+					&:hover {
+						--image-scale: var(--image-hover-scale);
 					}
 				}
 			}
