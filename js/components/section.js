@@ -1,6 +1,6 @@
 const AGA_PROJECT_TAG = 'aga-project';
 
-export default class AgaSection extends HTMLElement {
+ class AgaSection extends HTMLElement {
   constructor() {
     super();
   }
@@ -19,11 +19,11 @@ export default class AgaSection extends HTMLElement {
       const isLast = (list.length - i) == 1;
       const isOdd = i % 2 == 0;
       if ($agaProject && isLast && isOdd) $agaProject.className = "last-odd";
-      $container.appendChild($child)
-    })
+      $container.appendChild($child);
+    });
     this.appendChild($title);
     this.appendChild($description);
     this.appendChild($container);
   }
 }
-customElements.define('aga-section', AgaSection)
+customElements.define('aga-section', AgaSection);

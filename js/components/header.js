@@ -11,14 +11,14 @@ const NAVIGATOR = [
     ['/projects', 'projects'],
   ];
 
-export default class AgaHeader extends HTMLElement {
+ class AgaHeader extends HTMLElement {
   constructor() {
     super();
 
     const $info = document.createElement('div');
     const $logo = document.createElement('svg');
-    $logo.setAttribute('src', LOGO)
-    $info.appendChild($logo)
+    $logo.setAttribute('data-src', LOGO);
+    $info.appendChild($logo);
 
     const $author = document.createElement('h1');
     $author.textContent = AUTHOR;
@@ -32,7 +32,7 @@ export default class AgaHeader extends HTMLElement {
       const $a = document.createElement('a');
 
       $a.href = link;
-      $a.setAttribute('data-lang-key', translate)
+      $a.setAttribute('data-lang-key', translate);
       
       $li.appendChild($a);
       $ul.appendChild($li);
@@ -40,12 +40,12 @@ export default class AgaHeader extends HTMLElement {
     $nav.appendChild($ul);
     this.appendChild($nav);
 
-    const $div = document.createElement('div')
+    const $div = document.createElement('div');
 
     const $languageSelector = document.createElement('select');
     $languageSelector.id = "language-select";
     $languageSelector.setAttribute("data-lang-key", "language_selector");
-    $languageSelector.setAttribute("data-lang-type", "aria-label")
+    $languageSelector.setAttribute("data-lang-type", "aria-label");
     const $navigator = document.createElement('option');
     $navigator.setAttribute('value', '');
     $navigator.setAttribute('data-lang-key', '_navigator_');
@@ -56,15 +56,15 @@ export default class AgaHeader extends HTMLElement {
       $lang.setAttribute('value', lang);
       $lang.setAttribute('data-lang', lang);
       $lang.setAttribute('data-lang-key', '_name_');
-      $languageSelector?.appendChild($lang)
+      $languageSelector?.appendChild($lang);
     }
     $languageSelector.addEventListener("change", setLanguage);  
     $div.appendChild($languageSelector);
     const $themeButton = document.createElement('button');
     $themeButton.setAttribute("data-lang-key", "theme_button");
-    $themeButton.setAttribute("data-lang-type", "aria-label")
+    $themeButton.setAttribute("data-lang-type", "aria-label");
     const $svg = document.createElement('svg');
-    $svg.setAttribute('src', THEMES);
+    $svg.setAttribute('data-src', THEMES);
     $themeButton.appendChild($svg);
     $themeButton.addEventListener('click', () => {
       $themeButton.setAttribute('disabled', '');
@@ -72,8 +72,8 @@ export default class AgaHeader extends HTMLElement {
       setTimeout(() => $themeButton.removeAttribute('disabled'), 1000);
       replaceTheme();
     });
-    $div.appendChild($themeButton)
-    this.appendChild($div)
+    $div.appendChild($themeButton);
+    this.appendChild($div);
   }
 }
-customElements.define('aga-header', AgaHeader)
+customElements.define('aga-header', AgaHeader);

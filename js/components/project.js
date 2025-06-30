@@ -1,4 +1,4 @@
-export default class AgaProject extends HTMLElement {
+ class AgaProject extends HTMLElement {
   constructor() {
     super();
   }
@@ -15,11 +15,11 @@ export default class AgaProject extends HTMLElement {
     $imageWrapper.className = "image-wrapper";
     const imageSrc = `${tagType}/${attrName}.${attrTypeImage}`;
     const $image = document.createElement(tagType);
-    $image.setAttribute('src', imageSrc);
+    $image.setAttribute('data-src', imageSrc);
     if (tagType == 'img') {
       $image.setAttribute("data-lang-key", "language_selector");
       $image.setAttribute("data-lang-type", "alt");
-      $image.setAttribute("draggable", "false")
+      $image.setAttribute("draggable", "false");
     }
     $imageWrapper.appendChild($image);
     this.appendChild($imageWrapper);
@@ -30,10 +30,8 @@ export default class AgaProject extends HTMLElement {
 
     const $p_developedIn = document.createElement('p');
     $p_developedIn.classList.add('developed-in');
-    if (attrLangs.includes(','))
-      $p_developedIn.setAttribute('data-lang-args-and-list', attrLangs)
-    else
-      $p_developedIn.setAttribute('data-lang-args', attrLangs)
+    if (attrLangs.includes(',')) $p_developedIn.setAttribute('data-lang-args-and-list', attrLangs);
+    else $p_developedIn.setAttribute('data-lang-args', attrLangs);
     $p_developedIn.setAttribute('data-lang-key', 'developed_in');
     this.appendChild($p_developedIn);
 
@@ -42,4 +40,4 @@ export default class AgaProject extends HTMLElement {
     this.appendChild($description);
   }
 }
-customElements.define('aga-project', AgaProject)
+customElements.define('aga-project', AgaProject);
