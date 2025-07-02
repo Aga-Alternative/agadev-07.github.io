@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -17,18 +18,19 @@
     <meta property="og:image:height" content="1200" />
     <meta name="theme-color" content="#FF0000" />
 
-    <link rel="stylesheet" href="/css/index.bundle.css" />
-    <script src="/js/index.min.js"></script>
-  </head>
+    <link rel="stylesheet" href="css/index.bundle.css" />
+    <script src="js/index.min.js"></script>
+</head>
 
-  <body>
-    <aga-header></aga-header>
-    <main>
-      <aga-section data-type="projects">
-				<aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
-				<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
-      </aga-section>
-    </main>
-    <footer></footer>
-  </body>
+<body>
+	<aga-header></aga-header>
+	<main>
+		<section id="error">
+			<h2 id="error-message" data-lang-key="error_404"></h2>
+			<h3 id="message-error" data-lang-key="error_404_msg"></h3>
+		</section>
+	</main>
+	<footer></footer>
+</body>
+
 </html>
