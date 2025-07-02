@@ -1,222 +1,222 @@
 @import url('../animations.css');
 
 :root[data-theme='dark'] {
-	--body-background-color: #353535;
-	--body-color: #b6b6b6;
-	--header-background-color: #11111180;
-	--project-background-color: #272727;
+  --body-background-color: #353535;
+  --body-color: #b6b6b6;
+  --header-background-color: #11111180;
+  --project-background-color: #272727;
 
-	svg {
-		#dark {
-			opacity: 1;
-		}
+  svg {
+    #dark {
+      opacity: 1;
+    }
 
-		#light {
-			opacity: 0;
-		}
+    #light {
+      opacity: 0;
+    }
 
-		#cloud {
-			transform: translate(-100px);
-		}
+    #cloud {
+      transform: translate(-100px);
+    }
 
-		&.code {
-			text {
-				fill: #d4d4d4;
-			}
+    &.code {
+      text {
+        fill: #d4d4d4;
+      }
 
-			.bg {
-				fill: #1E1E1E;
-			}
+      .bg {
+        fill: #1e1e1e;
+      }
 
-			.bracket-1 {
-				fill: #ffff00;
-			}
+      .bracket-1 {
+        fill: #ffff00;
+      }
 
-			.bracket-2 {
-				fill: #d351c8;
-			}
+      .bracket-2 {
+        fill: #d351c8;
+      }
 
-			.bracket-3 {
-				fill: #2e94e7;
-			}
+      .bracket-3 {
+        fill: #2e94e7;
+      }
 
-			.variable {
-				fill: #9CDCFE;
-			}
+      .variable {
+        fill: #9cdcfe;
+      }
 
-			.constant {
-				fill: #b5cea8;
-			}
+      .constant {
+        fill: #b5cea8;
+      }
 
-			.type {
-				fill: #4EC9B0;
-			}
+      .type {
+        fill: #4ec9b0;
+      }
 
-			.function {
-				fill: #dcdcaa;
-			}
+      .function {
+        fill: #dcdcaa;
+      }
 
-			.keyword {
-				fill: #569cd6;
-				font-style: italic;
+      .keyword {
+        fill: #569cd6;
+        font-style: italic;
 
-				&.control {
-					fill: #C586C0;
-				}
-			}
+        &.control {
+          fill: #c586c0;
+        }
+      }
 
-			.string {
-				fill: #ce9178;
+      .string {
+        fill: #ce9178;
 
-				.scape {
-					fill: #ebc498;
-				}
-			}
-		}
-	}
+        .scape {
+          fill: #ebc498;
+        }
+      }
+    }
+  }
 
-	&.animate {
-		svg {
-			#dark {
-				animation: fade-in 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
+  &.animate {
+    svg {
+      #dark {
+        animation: fade-in 1s ease-in-out forwards;
+        transform-box: fill-box;
+        transform-origin: center;
 
-				#moon {
-					animation: moon-slide-in 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
-				}
-			}
+        #moon {
+          animation: moon-slide-in 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
+        }
+      }
 
-			#light {
-				animation: fade-out 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
+      #light {
+        animation: fade-out 1s ease-in-out forwards;
+        transform-box: fill-box;
+        transform-origin: center;
 
-				#sun {
-					animation: sun-slide-out 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
-				}
-			}
+        #sun {
+          animation: sun-slide-out 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
+        }
+      }
 
-			#cloud {
-				animation: cloud-slide-left 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-			}
-		}
-	}
+      #cloud {
+        animation: cloud-slide-left 1s ease-in-out forwards;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--body-background-color: #353535;
-		--body-color: #b6b6b6;
-		--header-background-color: #11111180;
-		--project-background-color: #272727;
+  :root {
+    --body-background-color: #353535;
+    --body-color: #b6b6b6;
+    --header-background-color: #11111180;
+    --project-background-color: #272727;
 
-		svg {
-			#dark {
-				opacity: 1;
-			}
+    svg {
+      #dark {
+        opacity: 1;
+      }
 
-			#light {
-				opacity: 0;
-			}
+      #light {
+        opacity: 0;
+      }
 
-			#cloud {
-				transform: translate(-100px);
-			}
+      #cloud {
+        transform: translate(-100px);
+      }
 
-			&.code {
-				text {
-					fill: #d4d4d4;
-				}
+      &.code {
+        text {
+          fill: #d4d4d4;
+        }
 
-				.bg {
-					fill: #1E1E1E;
-				}
+        .bg {
+          fill: #1e1e1e;
+        }
 
-				.bracket-1 {
-					fill: #ffff00;
-				}
+        .bracket-1 {
+          fill: #ffff00;
+        }
 
-				.bracket-2 {
-					fill: #d351c8;
-				}
+        .bracket-2 {
+          fill: #d351c8;
+        }
 
-				.bracket-3 {
-					fill: #2e94e7;
-				}
+        .bracket-3 {
+          fill: #2e94e7;
+        }
 
-				.variable {
-					fill: #9CDCFE;
-				}
+        .variable {
+          fill: #9cdcfe;
+        }
 
-				.constant {
-					fill: #b5cea8;
-				}
+        .constant {
+          fill: #b5cea8;
+        }
 
-				.type {
-					fill: #4EC9B0;
-				}
+        .type {
+          fill: #4ec9b0;
+        }
 
-				.function {
-					fill: #dcdcaa;
-				}
+        .function {
+          fill: #dcdcaa;
+        }
 
-				.keyword {
-					fill: #569cd6;
+        .keyword {
+          fill: #569cd6;
 
-					&.control {
-						fill: #C586C0;
-					}
-				}
+          &.control {
+            fill: #c586c0;
+          }
+        }
 
-				.string {
-					fill: #ce9178;
+        .string {
+          fill: #ce9178;
 
-					.scape {
-						fill: #ebc498;
-					}
-				}
-			}
-		}
+          .scape {
+            fill: #ebc498;
+          }
+        }
+      }
+    }
 
-		&.animate {
-			svg {
-				#dark {
-					animation: fade-in 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
+    &.animate {
+      svg {
+        #dark {
+          animation: fade-in 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
 
-					#moon {
-						animation: moon-slide-in 1s ease-in-out forwards;
-						transform-box: fill-box;
-						transform-origin: center;
-					}
-				}
+          #moon {
+            animation: moon-slide-in 1s ease-in-out forwards;
+            transform-box: fill-box;
+            transform-origin: center;
+          }
+        }
 
-				#light {
-					animation: fade-out 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
+        #light {
+          animation: fade-out 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
 
-					#sun {
-						animation: sun-slide-out 1s ease-in-out forwards;
-						transform-box: fill-box;
-						transform-origin: center;
-					}
-				}
+          #sun {
+            animation: sun-slide-out 1s ease-in-out forwards;
+            transform-box: fill-box;
+            transform-origin: center;
+          }
+        }
 
-				#cloud {
-					animation: cloud-slide-left 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
-				}
-			}
-		}
-	}
+        #cloud {
+          animation: cloud-slide-left 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
+        }
+      }
+    }
+  }
 }

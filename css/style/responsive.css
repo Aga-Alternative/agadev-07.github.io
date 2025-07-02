@@ -1,0 +1,114 @@
+@media screen and (width > 700px) {
+  body > main > aga-section[data-type='projects'] > div.container {
+    > a > aga-project,
+    > aga-project {
+      &.last-odd {
+        grid-template: 'image title title' 2.5rem 'image description developed-in' auto / 4fr 3fr 2fr;
+        gap: calc(var(--project-card-margin) * 2);
+        width: 100%;
+
+        > h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+@media screen and (width > 1200px) {
+  body > main {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  body > main {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  :root {
+    --project-card-items: 1;
+  }
+  body {
+    > header {
+      flex-direction: row;
+      align-items: center;
+
+      > h1 {
+        width: 100%;
+      }
+
+      > div {
+        flex-direction: row;
+
+        > select,
+        > button {
+          padding: 1rem;
+        }
+      }
+
+      > nav > ul {
+        padding: 1rem;
+        flex-wrap: wrap;
+
+        > li {
+          width: 50%;
+
+          > a {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    > main {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body > main {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    > header {
+      flex-direction: column;
+      align-items: center;
+
+      > nav > ul {
+        padding: 1rem;
+        flex-wrap: wrap;
+
+        > li {
+          width: 50%;
+
+          > a {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    > main {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  body {
+    > header {
+      justify-content: center;
+
+      > div {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

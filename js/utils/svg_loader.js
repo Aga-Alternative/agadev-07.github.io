@@ -1,6 +1,6 @@
 // Se utiliza para cargar svg externos, se integran directamente en el dom para poder usar css propio
 async function loadSVG(element) {
-	const src = element.getAttribute('data-src');
+	const src = element.getAttribute('src');
 	const domParser = new DOMParser();
 	const data = await fetch(src);
 	const rawSVG = await data.text();
@@ -9,5 +9,5 @@ async function loadSVG(element) {
 	element.replaceWith(SVG);
 }
 export function loadSVGs() {
-	for (const svg of document.querySelectorAll('svg[data-src]')) loadSVG(svg);
+	for (const svg of document.querySelectorAll('svg[src]')) loadSVG(svg);
 }

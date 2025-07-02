@@ -2,22 +2,23 @@ import { AUTHOR } from '../data.js';
 import { replaceTheme } from '../utils/theme.js';
 import { setLanguage, translations } from '../utils/translate.js';
 
-const LOGO = "svg/logo.svg";
+const LOGO = 'svg/logo.svg';
 const THEMES = 'svg/themes.svg';
 const NAVIGATOR = [
-    ['/', 'home'],
-    //	['/about', 'about'],
-    //	['/contact', 'contact'],
-    ['/projects', 'projects'],
-  ];
+  ['/', 'home'],
+  //	['/about', 'about'],
+  //	['/contact', 'contact'],
+  ['/projects', 'projects'],
+];
 
- class AgaHeader extends HTMLElement {
+class AgaHeader extends HTMLElement {
   constructor() {
     super();
-
+  }
+  connectedCallback() {
     const $info = document.createElement('div');
     const $logo = document.createElement('svg');
-    $logo.setAttribute('data-src', LOGO);
+    $logo.setAttribute('src', LOGO);
     $info.appendChild($logo);
 
     const $author = document.createElement('h1');
@@ -33,19 +34,19 @@ const NAVIGATOR = [
 
       $a.href = link;
       $a.setAttribute('data-lang-key', translate);
-      
+
       $li.appendChild($a);
       $ul.appendChild($li);
-    };
+    }
     $nav.appendChild($ul);
     this.appendChild($nav);
 
     const $div = document.createElement('div');
 
     const $languageSelector = document.createElement('select');
-    $languageSelector.id = "language-select";
-    $languageSelector.setAttribute("data-lang-key", "language_selector");
-    $languageSelector.setAttribute("data-lang-type", "aria-label");
+    $languageSelector.id = 'language-select';
+    $languageSelector.setAttribute('data-lang-key', 'language_selector');
+    $languageSelector.setAttribute('data-lang-type', 'aria-label');
     const $navigator = document.createElement('option');
     $navigator.setAttribute('value', '');
     $navigator.setAttribute('data-lang-key', '_navigator_');
@@ -58,13 +59,13 @@ const NAVIGATOR = [
       $lang.setAttribute('data-lang-key', '_name_');
       $languageSelector?.appendChild($lang);
     }
-    $languageSelector.addEventListener("change", setLanguage);  
+    $languageSelector.addEventListener('change', setLanguage);
     $div.appendChild($languageSelector);
     const $themeButton = document.createElement('button');
-    $themeButton.setAttribute("data-lang-key", "theme_button");
-    $themeButton.setAttribute("data-lang-type", "aria-label");
+    $themeButton.setAttribute('data-lang-key', 'theme_button');
+    $themeButton.setAttribute('data-lang-type', 'aria-label');
     const $svg = document.createElement('svg');
-    $svg.setAttribute('data-src', THEMES);
+    $svg.setAttribute('src', THEMES);
     $themeButton.appendChild($svg);
     $themeButton.addEventListener('click', () => {
       $themeButton.setAttribute('disabled', '');

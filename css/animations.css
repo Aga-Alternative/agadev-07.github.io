@@ -22,14 +22,6 @@
 	from { transform: translateX(100px); }
 	to   { transform: translateX(-100px); }
 }
-@keyframes blink1 {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-@keyframes blink2 {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
 @keyframes fade-in {
 	from { opacity: 0; }
 	to   { opacity: 1; }

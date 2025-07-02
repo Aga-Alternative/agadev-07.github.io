@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --project-card-items: 2;
+  --project-card-margin: 0.5em;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  --image-scale: 1;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--body-background-color);
+  color: var(--body-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > aga-header {
+    top: 0;
+    backdrop-filter: blur(10px);
+    background-color: var(--header-background-color);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    box-shadow: 0 0 5px red;
+    position: sticky;
+    z-index: 10;
+
+    > div {
+      display: flex;
+      align-items: center;
+
+      > svg {
+        height: 2.3em;
+        padding: 0 10px;
+      }
+    }
+
+    > nav {
+      > ul {
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        /*Para mantener centrado los botones de navegacion */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        > li {
+          width: 111px;
+          box-sizing: content-box;
+          padding: 10px;
+          text-align: center;
+
+          > a {
+            display: block;
+            height: 100%;
+            text-decoration: none;
+            color: var(--body-color);
+            font-size: 1.5em;
+            font-weight: bold;
+          }
+
+          &:hover {
+            background-color: #ff000040;
+          }
+        }
+      }
+    }
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+
+      > select {
+        border-style: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1.3em;
+        background-color: transparent;
+        color: currentColor;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        padding: 10px;
+
+        &:focus {
+          background-color: var(--project-background-color);
+        }
+
+        > option {
+          backdrop-filter: blur(10px);
+          background-color: var(--project-background-color);
+
+          &:hover {
+            background-color: #ff000080;
+          }
+        }
+      }
+
+      > button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1.3em;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+
+        > svg {
+          margin-left: 30%;
+          width: 4rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+
+  > main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    > section#error {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      > h2#error-message {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100%;
+        width: 100%;
+        margin-top: 5rem;
+        font-size: 4.5rem;
+      }
+
+      > h3#message-error {
+        display: flex;
+        justify-content: center;
+        font-size: 2.5rem;
+      }
+    }
+
+    > aga-section[data-type='projects'] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3rem;
+
+      > h2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 3em;
+      }
+
+      > div.container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        > a {
+          width: calc(
+            (100% / var(--project-card-items)) -
+              (var(--project-card-margin) * 2)
+          );
+          margin: var(--project-card-margin);
+          color: var(--body-color);
+          text-decoration: none;
+
+          > aga-project {
+            --image-hover-scale: 1.1;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        > aga-project {
+          --image-hover-scale: 1.05;
+          margin: var(--project-card-margin);
+          width: calc(
+            (100% / var(--project-card-items)) -
+              (var(--project-card-margin) * 2)
+          );
+        }
+
+        > a > aga-project,
+        > aga-project {
+          border-radius: 1em;
+          /* Como se puede observar en commits anteriores se uso flex pero agregaba mucha complejidad sintactica */
+          /* Se decidio cambiar a grid por su simplicidad a la hora de editar los contenedores */
+          display: grid;
+          grid-template-areas:
+            'title'
+            'image'
+            'developed-in'
+            'description';
+          padding: 1em;
+          background-color: var(--project-background-color);
+
+          > div.image-wrapper {
+            overflow: hidden;
+            border-radius: 0.5em;
+            aspect-ratio: 582 / 347;
+            grid-area: image;
+
+            > img,
+            > svg {
+              height: auto;
+              width: 100%;
+              transition: transform 0.3s ease;
+              transform-origin: center;
+              transform: scale(var(--image-scale));
+            }
+          }
+
+          > h3 {
+            font-size: 1.5em;
+            margin-bottom: 0.3em;
+            grid-area: title;
+          }
+
+          > p {
+            grid-area: description;
+
+            &.developed-in {
+              margin: 0.5em 0.5em 0 0;
+              font-size: 0.8em;
+              text-align: right;
+              font-weight: bold;
+              grid-area: developed-in;
+            }
+          }
+
+          &:hover {
+            --image-scale: var(--image-hover-scale);
+          }
+        }
+      }
+    }
+  }
+
+  > footer {
+    margin-top: auto;
+    width: 100%;
+
+    > p {
+      margin: auto;
+      text-align: center;
+      padding: 1rem 0;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--project-background-color);
+  border-left: 1px red solid;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--body-background-color);
+  border-left: 1px red solid;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+html {
+  /* Scroll de firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--body-background-color) var(--project-background-color);
+}
+
+svg {
+  user-select: none;
+  -moz-user-select: none;
+
+  &.code .keyword {
+    font-style: italic;
+  }
+}

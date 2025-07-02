@@ -1,4 +1,4 @@
- class AgaProject extends HTMLElement {
+class AgaProject extends HTMLElement {
   constructor() {
     super();
   }
@@ -11,17 +11,23 @@
     // Si tiene elementos ya fue inicializado
     if (this.childElementCount) return;
 
-    const $imageWrapper = document.createElement("div");
-    $imageWrapper.className = "image-wrapper";
+    const $imageWrapper = document.createElement('div');
+    $imageWrapper.className = 'image-wrapper';
     const imageSrc = `${tagType}/${attrName}.${attrTypeImage}`;
-    const $image = document.createElement(tagType);
-    $image.setAttribute('data-src', imageSrc);
-    if (tagType == 'img') {
-      $image.setAttribute("data-lang-key", "language_selector");
-      $image.setAttribute("data-lang-type", "alt");
-      $image.setAttribute("draggable", "false");
+    if (tagType === 'svg') {
+      fetch(imageSrc)
+        .then(res => res.text())
+        .then(svgText => {
+          $imageWrapper.innerHTML = svgText;
+        });
+    } else {
+      const $image = document.createElement(tagType);
+      $image.setAttribute('src', imageSrc);
+      $image.setAttribute('data-lang-key', 'language_selector');
+      $image.setAttribute('data-lang-type', 'alt');
+      $image.setAttribute('draggable', 'false');
+      $imageWrapper.appendChild($image);
     }
-    $imageWrapper.appendChild($image);
     this.appendChild($imageWrapper);
 
     const $h3 = document.createElement('h3');
@@ -30,7 +36,8 @@
 
     const $p_developedIn = document.createElement('p');
     $p_developedIn.classList.add('developed-in');
-    if (attrLangs.includes(',')) $p_developedIn.setAttribute('data-lang-args-and-list', attrLangs);
+    if (attrLangs.includes(','))
+      $p_developedIn.setAttribute('data-lang-args-and-list', attrLangs);
     else $p_developedIn.setAttribute('data-lang-args', attrLangs);
     $p_developedIn.setAttribute('data-lang-key', 'developed_in');
     this.appendChild($p_developedIn);

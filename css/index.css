@@ -1,2 +1,4 @@
-@import url('./themes/index.css');
-@import url('./style/index.css');
+@import url('./themes/dark.css');
+@import url('./themes/light.css');
+@import url('./style/base.css');
+@import url('./style/responsive.css');

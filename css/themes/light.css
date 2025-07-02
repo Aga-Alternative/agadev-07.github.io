@@ -1,231 +1,231 @@
 @import url('../animations.css');
 
 :root[data-theme='light'] {
-	--body-background-color: #dadada;
-	--body-color: #333333;
-	--header-background-color: #e0e0e080;
-	--project-background-color: #c1c1c1;
+  --body-background-color: #dadada;
+  --body-color: #333333;
+  --header-background-color: #e0e0e080;
+  --project-background-color: #c1c1c1;
 
-	svg {
-		#dark {
-			opacity: 0;
-		}
+  svg {
+    #dark {
+      opacity: 0;
+    }
 
-		#light {
-			opacity: 1;
-		}
+    #light {
+      opacity: 1;
+    }
 
-		#cloud {
-			transform: translate(100px);
-		}
+    #cloud {
+      transform: translate(100px);
+    }
 
-		&.code {
-			text {
-				fill: #000000;
-			}
+    &.code {
+      text {
+        fill: #000000;
+      }
 
-			.bg {
-				fill: #FFFFFF;
-			}
+      .bg {
+        fill: #ffffff;
+      }
 
-			.bracket-1 {
-				fill: #2e94e7;
-			}
+      .bracket-1 {
+        fill: #2e94e7;
+      }
 
-			/* Azul */
-			.bracket-2 {
-				fill: #098658;
-			}
+      /* Azul */
+      .bracket-2 {
+        fill: #098658;
+      }
 
-			/* Verde */
-			.bracket-3 {
-				fill: #9e1010;
-			}
+      /* Verde */
+      .bracket-3 {
+        fill: #9e1010;
+      }
 
-			/* Rojizo */
-			.variable {
-				fill: #001080;
-			}
+      /* Rojizo */
+      .variable {
+        fill: #001080;
+      }
 
-			.constant {
-				fill: #098658;
-			}
+      .constant {
+        fill: #098658;
+      }
 
-			.type {
-				fill: #267f99;
-			}
+      .type {
+        fill: #267f99;
+      }
 
-			.function {
-				fill: #795E26;
-			}
+      .function {
+        fill: #795e26;
+      }
 
-			.keyword {
-				fill: #0000ff;
-				font-style: italic;
+      .keyword {
+        fill: #0000ff;
+        font-style: italic;
 
-				&.control {
-					fill: #AF00DB;
-				}
-			}
+        &.control {
+          fill: #af00db;
+        }
+      }
 
-			.string {
-				fill: #a31515;
+      .string {
+        fill: #a31515;
 
-				.scape {
-					fill: #cf4141;
-				}
-			}
-		}
-	}
+        .scape {
+          fill: #cf4141;
+        }
+      }
+    }
+  }
 
-	&.animate {
-		svg {
-			#dark {
-				animation: fade-out 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
+  &.animate {
+    svg {
+      #dark {
+        animation: fade-out 1s ease-in-out forwards;
+        transform-box: fill-box;
+        transform-origin: center;
 
-				#moon {
-					animation: moon-slide-out 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
-				}
-			}
+        #moon {
+          animation: moon-slide-out 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
+        }
+      }
 
-			#light {
-				animation: fade-in 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
+      #light {
+        animation: fade-in 1s ease-in-out forwards;
+        transform-box: fill-box;
+        transform-origin: center;
 
-				#sun {
-					animation: sun-slide-in 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
-				}
-			}
+        #sun {
+          animation: sun-slide-in 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
+        }
+      }
 
-			#cloud {
-				animation: cloud-slide-right 1s ease-in-out forwards;
-				transform-box: fill-box;
-				transform-origin: center;
-			}
-		}
-	}
+      #cloud {
+        animation: cloud-slide-right 1s ease-in-out forwards;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+    }
+  }
 }
 
 @media (prefers-color-scheme: light) {
-	:root {
-		--body-background-color: #dadada;
-		--body-color: #333333;
-		--header-background-color: #e0e0e080;
+  :root {
+    --body-background-color: #dadada;
+    --body-color: #333333;
+    --header-background-color: #e0e0e080;
 
-		svg {
-			#dark {
-				opacity: 0;
-			}
+    svg {
+      #dark {
+        opacity: 0;
+      }
 
-			#light {
-				opacity: 1;
-			}
+      #light {
+        opacity: 1;
+      }
 
-			#cloud {
-				transform: translate(100px);
-			}
+      #cloud {
+        transform: translate(100px);
+      }
 
-			&.code {
-				text {
-					fill: #000000;
-				}
+      &.code {
+        text {
+          fill: #000000;
+        }
 
-				.bg {
-					fill: #FFFFFF;
-				}
+        .bg {
+          fill: #ffffff;
+        }
 
-				.bracket-1 {
-					fill: #2e94e7;
-				}
+        .bracket-1 {
+          fill: #2e94e7;
+        }
 
-				/* Azul */
-				.bracket-2 {
-					fill: #098658;
-				}
+        /* Azul */
+        .bracket-2 {
+          fill: #098658;
+        }
 
-				/* Verde */
-				.bracket-3 {
-					fill: #9e1010;
-				}
+        /* Verde */
+        .bracket-3 {
+          fill: #9e1010;
+        }
 
-				/* Rojizo */
-				.variable {
-					fill: #001080;
-				}
+        /* Rojizo */
+        .variable {
+          fill: #001080;
+        }
 
-				.constant {
-					fill: #098658;
-				}
+        .constant {
+          fill: #098658;
+        }
 
-				.type {
-					fill: #267f99;
-				}
+        .type {
+          fill: #267f99;
+        }
 
-				.function {
-					fill: #795E26;
-				}
+        .function {
+          fill: #795e26;
+        }
 
-				.keyword {
-					fill: #0000ff;
+        .keyword {
+          fill: #0000ff;
 
-					&.control {
-						fill: #AF00DB;
-					}
-				}
+          &.control {
+            fill: #af00db;
+          }
+        }
 
-				.string {
-					fill: #a31515;
+        .string {
+          fill: #a31515;
 
-					.scape {
-						fill: #cf4141;
-					}
-				}
-			}
-		}
+          .scape {
+            fill: #cf4141;
+          }
+        }
+      }
+    }
 
-		&.animate {
-			svg {
-				#dark {
-					animation: fade-out 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
+    &.animate {
+      svg {
+        #dark {
+          animation: fade-out 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
 
-					#moon {
-						animation: moon-slide-out 1s ease-in-out forwards;
-						transform-box: fill-box;
-						transform-origin: center;
-					}
-				}
+          #moon {
+            animation: moon-slide-out 1s ease-in-out forwards;
+            transform-box: fill-box;
+            transform-origin: center;
+          }
+        }
 
-				#light {
-					animation: fade-in 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
+        #light {
+          animation: fade-in 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
 
-					#sun {
-						animation: sun-slide-in 1s ease-in-out forwards;
-						transform-box: fill-box;
-						transform-origin: center;
-					}
-				}
+          #sun {
+            animation: sun-slide-in 1s ease-in-out forwards;
+            transform-box: fill-box;
+            transform-origin: center;
+          }
+        }
 
-				#cloud {
-					animation: cloud-slide-right 1s ease-in-out forwards;
-					transform-box: fill-box;
-					transform-origin: center;
-				}
-			}
-		}
+        #cloud {
+          animation: cloud-slide-right 1s ease-in-out forwards;
+          transform-box: fill-box;
+          transform-origin: center;
+        }
+      }
+    }
 
-		img[data-lang-key=agalang_image] {
-			content: url(../../imgs/agamca.webp);
-		}
-	}
+    img[data-lang-key='agalang_image'] {
+      content: url(../../imgs/agamca.webp);
+    }
+  }
 }

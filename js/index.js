@@ -5,9 +5,9 @@ import { useTranslate } from './utils/translate.js';
 import { loadSVGs } from './utils/svg_loader.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-	loadSVGs();
-	useTheme();
-	setInterface();
+  loadSVGs();
+  useTheme();
+  setInterface();
 
-	useTranslate();
+  useTranslate();
 });
