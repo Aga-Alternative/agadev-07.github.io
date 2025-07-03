@@ -17,8 +17,10 @@ class AgaHeader extends HTMLElement {
   }
   connectedCallback() {
     const $info = document.createElement('div');
-    const $logo = document.createElement('svg');
+    
+    const $logo = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     $logo.setAttribute('src', LOGO);
+    loadSVG($logo);
     $info.appendChild($logo);
 
     const $author = document.createElement('h1');
@@ -64,9 +66,11 @@ class AgaHeader extends HTMLElement {
     const $themeButton = document.createElement('button');
     $themeButton.setAttribute('data-lang-key', 'theme_button');
     $themeButton.setAttribute('data-lang-type', 'aria-label');
-    const $svg = document.createElement('svg');
-    $svg.setAttribute('src', THEMES);
-    $themeButton.appendChild($svg);
+    
+    const $themes = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    $themes.setAttribute('src', THEMES);
+    loadSVG($themes);
+    $themeButton.appendChild($themes);
     $themeButton.addEventListener('click', () => {
       $themeButton.setAttribute('disabled', '');
       document.documentElement.className = 'animate';

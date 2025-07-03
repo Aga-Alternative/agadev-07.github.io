@@ -48,8 +48,33 @@ class CSSAnalyzer {
     fs.writeFileSync(path, file);
   }
 }
+function limpiarComentarios(linea) {
+  let dentroCadena = false;
+  let delimitadorCadena = null;
+  for (let i = 0; i < linea.length; i++) {
+    const c = linea[i];
+
+    // Detectar inicio o fin de cadena
+    if ((c === "'" || c === "'") && (i === 0 || linea[i - 1] !== '\\')) {
+      if (dentroCadena && c === delimitadorCadena) {
+        dentroCadena = false;
+        delimitadorCadena = null;
+      } else if (!dentroCadena) {
+        dentroCadena = true;
+        delimitadorCadena = c;
+      }
+    }
+
+    // Si encontramos // fuera de una cadena, cortamos la línea
+    if (!dentroCadena && c === '/' && linea[i + 1] === '/') {
+      return linea.slice(0, i).trim();
+    }
+  }
+
+  return linea.trim();
+}
 class JSAnalyzer {
-  /**@type {Record<string, string>} */
+  /**@type {Record<string, boolean>} */
   #files = {};
   /**@type {string} */
   #content = '';
@@ -62,6 +87,7 @@ class JSAnalyzer {
       .replaceAll('\t', '')
       .replaceAll(';', ';\n')
       .split('\n')
+      .map(limpiarComentarios)
       .filter(l => Boolean(l.split('//')[0].trim()));
     const newLines = [];
     for (const line of lines) {
@@ -96,20 +122,16 @@ class JSAnalyzer {
       const file_name = path.join('/');
       // Recorsividad magica
       this.read(file_name);
-      const data_line = name
-        ? `const ${name} = ${this.#content};`
-        : this.#content;
-      if (file_name in this.#files) continue;
-      this.#files[file_name] = data_line;
-      newLines.push(data_line);
+      if (file_name in this.#files) {
+        continue;
+      }
+      this.#files[file_name] = true;
+      newLines.push(name ? `const ${name} = ${this.#content};` : this.#content);
     }
     this.#content = newLines
-      .join('\n')
-      .replace(/\/\/.*$/gm, '') // Elimina comentarios de línea
-      .replace(/\/\*[\s\S]*?\*\//g, '') // Elimina comentarios multilinea
+      .join('')
       .replace(/\s{2,}/g, ' ') // Reemplaza múltiples espacios
-      .replace(/\n/g, '') // Quita saltos de línea
-      .replace(/\s*([=:{},;()+\-*/<>])\s*/g, '$1') // Quita espacios alrededor de operadores comunes
+      .replace(/\s*([=:,\-+*/%<>])\s*/g, '$1') // Quita espacios alrededor de operadores comunes
       .trim();
     return this;
   }

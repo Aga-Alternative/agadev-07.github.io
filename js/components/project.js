@@ -1,3 +1,5 @@
+import { loadSVG } from '../utils/svg_loader.js';
+
 class AgaProject extends HTMLElement {
   constructor() {
     super();
@@ -15,11 +17,10 @@ class AgaProject extends HTMLElement {
     $imageWrapper.className = 'image-wrapper';
     const imageSrc = `${tagType}/${attrName}.${attrTypeImage}`;
     if (tagType === 'svg') {
-      fetch(imageSrc)
-        .then(res => res.text())
-        .then(svgText => {
-          $imageWrapper.innerHTML = svgText;
-        });
+      const $image = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      $image.setAttribute('src', imageSrc);
+      loadSVG($image);
+      $imageWrapper.appendChild($image);
     } else {
       const $image = document.createElement(tagType);
       $image.setAttribute('src', imageSrc);
