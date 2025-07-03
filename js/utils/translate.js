@@ -1,15 +1,16 @@
-import es from '../../locales/es.json' with {type:'json'};
-import en from '../../locales/en.json' with {type:'json'};
-import pt from '../../locales/pt.json' with {type:'json'};
+import es from '../../locales/es.json' with {type: 'json'};
+import en from '../../locales/en.json' with {type: 'json'};
+import pt from '../../locales/pt.json' with {type: 'json'};
+import ko from '../../locales/ko.json' with {type: 'json'};
 
-export const translations = {es,en,pt};
+export const translations = { es, en, pt, ko };
 
 
 export function getTranslation(lang, key) {
-	if(key in translations[lang]) return translations[lang][key];
+	if (key in translations[lang]) return translations[lang][key];
 	for (const lang of navigator.languages) {
 		let language = lang.split('-')[0];
-		if(translations[language]?.[key]) return translations[language][key];
+		if (translations[language]?.[key]) return translations[language][key];
 	}
 	return translations.en[key] ?? key;
 }
@@ -23,7 +24,7 @@ export function useTranslate() {
 	if (originalLang === language) return;
 	$html.setAttribute('lang', language);
 
-	if(localStorage.getItem('lang'))
+	if (localStorage.getItem('lang'))
 		document.querySelector('select#language-select').value = language;
 
 	for (const $el of document.querySelectorAll('[data-lang-key]')) {
@@ -36,23 +37,22 @@ export function useTranslate() {
 		}
 		if ($el.hasAttribute('data-lang-args-and-list')) {
 			const args = $el.getAttribute('data-lang-args-and-list').split(',');
-			const comma = getTranslation(lang, 'comma')
-			const and = getTranslation(lang, 'and')
-			console.log(args);
+			const comma = getTranslation(lang, 'comma');
+			const and = getTranslation(lang, 'and');
 			if (args.length > 1) {
 				const last = args.pop();
-  			let result = args[0];
-  			for (let i = 1; i < args.length; i++) {
-  			  result = comma.replace('%s', result).replace('%s', args[i]);
-  			}
+				let result = args[0];
+				for (let i = 1; i < args.length; i++) {
+					result = comma.replace('%s', result).replace('%s', args[i]);
+				}
 				result = and.replace('%s', result).replace('%s', last);
 				value = value.replace('%s', result);
-			}else value = value.replace('%s', args.shift());
+			} else value = value.replace('%s', args.shift());
 		}
-		if ($el.hasAttribute('data-lang-type')){
+		if ($el.hasAttribute('data-lang-type')) {
 			let type = $el.getAttribute('data-lang-type');
 			$el.setAttribute(type, value);
-		}else $el.textContent = value;
+		} else $el.textContent = value;
 	}
 }
 export function getLanguage() {
@@ -67,7 +67,7 @@ export function getLanguage() {
 }
 export function setLanguage() {
 	const lang = document.querySelector('select#language-select').value;
-	if(!lang) localStorage.removeItem('lang')
+	if (!lang) localStorage.removeItem('lang');
 	if (lang in translations) localStorage.setItem('lang', lang);
 	useTranslate();
 }

@@ -3,7 +3,6 @@ import { AUTHOR, INIT_YEAR } from './data.js';
 export function setInterface() {
 
 	document.title = AUTHOR;
-	//document.getElementById('author').textContent = AUTHOR;
 
 	const footer_p = document.createElement('p');
 	footer_p.textContent = (function () {
