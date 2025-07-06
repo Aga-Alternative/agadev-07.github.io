@@ -14,6 +14,7 @@ body {
 }
 
 body {
+  font-display: swap;
   --image-scale: 1;
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -167,16 +168,17 @@ body {
         font-size: 3em;
       }
 
+      >aga-project, >a>aga-project {
+        width: calc((100% / var(--project-card-items)) - (var(--project-card-margin) * 2));
+      }
       > div.container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
 
         > a {
-          width: calc(
-            (100% / var(--project-card-items)) -
-              (var(--project-card-margin) * 2)
-          );
+          width: calc((100% / var(--project-card-items)) - (var(--project-card-margin) * 2));
           margin: var(--project-card-margin);
           color: var(--body-color);
           text-decoration: none;
@@ -191,10 +193,7 @@ body {
         > aga-project {
           --image-hover-scale: 1.05;
           margin: var(--project-card-margin);
-          width: calc(
-            (100% / var(--project-card-items)) -
-              (var(--project-card-margin) * 2)
-          );
+          width: calc((100% / var(--project-card-items)) - (var(--project-card-margin) * 2));
         }
 
         > a > aga-project,
@@ -219,8 +218,8 @@ body {
 
             > img,
             > svg {
-              height: auto;
               width: 100%;
+              aspect-ratio: 582 / 347;
               transition: transform 0.3s ease;
               transform-origin: center;
               transform: scale(var(--image-scale));

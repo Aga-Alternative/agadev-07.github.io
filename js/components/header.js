@@ -6,8 +6,8 @@ const LOGO = 'svg/logo.svg';
 const THEMES = 'svg/themes.svg';
 const NAVIGATOR = [
   ['/', 'home'],
-  //	['/about', 'about'],
-  //	['/contact', 'contact'],
+  //  ['/about', 'about'],
+  //  ['/contact', 'contact'],
   ['/projects', 'projects'],
 ];
 

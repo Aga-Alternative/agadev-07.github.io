@@ -2,12 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta
-      name="description"
-      content="Learn more about AgaDev and its projects"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn more about AgaDev and its projects" />
     <meta property="og:title" content="AgaDev portfolio Home" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://agadev-07.github.io" />
@@ -17,16 +14,21 @@
     <meta property="og:image:height" content="1200" />
     <meta name="theme-color" content="#FF0000" />
 
+    <link rel="preload" as="image" href="/img/agamca.webp" />
+    <link rel="preload" as="image" href="/svg/agalang.svg" />
+
     <link rel="stylesheet" href="/css/index.bundle.css" />
-    <script src="/js/index.min.js"></script>
+    <script src="/js/index.min.js" defer></script>
   </head>
 
   <body>
     <aga-header></aga-header>
     <main>
       <aga-section data-type="projects">
-				<aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
-				<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
+        <aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
+        <a href="https://aga-mca.pages.dev">
+          <aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
+        </a>
       </aga-section>
     </main>
     <footer></footer>

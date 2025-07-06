@@ -5,12 +5,7 @@ class CSSAnalyzer {
   #files = {};
   /** @param {string} file */
   read(file) {
-    const lines = fs
-      .readFileSync(file, 'utf-8')
-      .replaceAll('\r', '')
-      .replaceAll(';', ';\n')
-      .split('\n')
-      .filter(Boolean);
+    const lines = fs.readFileSync(file, 'utf-8').replaceAll('\r', '').replaceAll(';', ';\n').split('\n').filter(Boolean);
     const newLines = [];
     for (const line of lines) {
       const trimmed = line.trim();
@@ -48,30 +43,30 @@ class CSSAnalyzer {
     fs.writeFileSync(path, file);
   }
 }
-function limpiarComentarios(linea) {
-  let dentroCadena = false;
-  let delimitadorCadena = null;
-  for (let i = 0; i < linea.length; i++) {
-    const c = linea[i];
+function clearComments(line) {
+  let inString = false;
+  let stringChar = null;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
 
     // Detectar inicio o fin de cadena
-    if ((c === "'" || c === "'") && (i === 0 || linea[i - 1] !== '\\')) {
-      if (dentroCadena && c === delimitadorCadena) {
-        dentroCadena = false;
-        delimitadorCadena = null;
-      } else if (!dentroCadena) {
-        dentroCadena = true;
-        delimitadorCadena = c;
+    if ((c === "'" || c === "'") && (i === 0 || line[i - 1] !== '\\')) {
+      if (inString && c === stringChar) {
+        inString = false;
+        stringChar = null;
+      } else if (!inString) {
+        inString = true;
+        stringChar = c;
       }
     }
 
     // Si encontramos // fuera de una cadena, cortamos la línea
-    if (!dentroCadena && c === '/' && linea[i + 1] === '/') {
-      return linea.slice(0, i).trim();
+    if (!inString && c === '/' && line[i + 1] === '/') {
+      return line.slice(0, i).trim();
     }
   }
 
-  return linea.trim();
+  return line.trim();
 }
 class JSAnalyzer {
   /**@type {Record<string, boolean>} */
@@ -87,7 +82,7 @@ class JSAnalyzer {
       .replaceAll('\t', '')
       .replaceAll(';', ';\n')
       .split('\n')
-      .map(limpiarComentarios)
+      .map(clearComments)
       .filter(l => Boolean(l.split('//')[0].trim()));
     const newLines = [];
     for (const line of lines) {
@@ -100,24 +95,18 @@ class JSAnalyzer {
         newLines.push(trimmed);
         continue;
       }
-      const json_import = /import (.+?) from '(.+?)' with {type: 'json'}/.exec(
-        line
-      );
+      const json_import = /import (.+?) from '(.+?)' with {type: 'json'}/.exec(line);
       const name = json_import?.[1];
-      const import_url_path = (
-        json_import ? json_import[2] : /('(.+?)')/g.exec(trimmed)?.[2]
-      )
-        ?.split(/[\\\/]/)
-        .filter(s => s != '.');
+      const import_url_path = (json_import ? json_import[2] : /('(.+?)')/g.exec(trimmed)?.[2])?.split(/[\\\/]/).filter(s => s != '.');
       const path = file.split(/[\\\/]/).filter(Boolean);
       path.pop();
       if (!import_url_path) {
         newLines.push(trimmed);
         continue;
       }
-      for (const ppath of import_url_path) {
-        if (ppath == '..') path.pop();
-        else path.push(ppath);
+      for (const pathPart of import_url_path) {
+        if (pathPart == '..') path.pop();
+        else path.push(pathPart);
       }
       const file_name = path.join('/');
       // Recorsividad magica
@@ -131,7 +120,7 @@ class JSAnalyzer {
     this.#content = newLines
       .join('')
       .replace(/\s{2,}/g, ' ') // Reemplaza múltiples espacios
-      .replace(/\s*([=:,\-+*/%<>])\s*/g, '$1') // Quita espacios alrededor de operadores comunes
+      .replace(/\s*([=:,\-+*/<>])\s*/g, '$1') // Quita espacios alrededor de operadores comunes
       .trim();
     return this;
   }

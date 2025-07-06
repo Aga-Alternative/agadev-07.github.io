@@ -1,50 +1,50 @@
 <svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-	<defs>
-		<clipPath id="toggle-clip">
-			<circle cx="50" cy="50" r="50" />
-			<circle cx="150" cy="50" r="50" />
-			<path d="M 50,0 L 150,0 L 150,100 L 50,100 Z" />
-		</clipPath>
-	</defs>
-	<defs>
-		<clipPath id="moon-clip">
-			<circle cx="150" cy="50" r="40" />
-		</clipPath>
-	</defs>
-	<g clip-path="url(#toggle-clip)">
-		<g id="light">
-			<polygon points="0,0 200,0 200,100 0,100" fill="#2178DD" />
-			<circle cx="50" cy="50" r="145" fill="#3286DF" />
-			<circle cx="50" cy="50" r="115" fill="#4395E2" />
-			<circle cx="50" cy="50" r="90" fill="#54A3E4" />
-			<circle cx="50" cy="50" r="70" fill="#65B1E6" />
-			<circle cx="50" cy="50" r="55" fill="#76C0E9" />
-			<circle cx="50" cy="50" r="45" fill="#87CEEB" />
-			<circle cx="50" cy="50" r="40" fill="gold" id="sun" />
-		</g>
-		<g id="dark">
-			<polygon points="0,0 200,0 200,100 0,100" fill="#000000" />
-			<circle cx="150" cy="50" r="145" fill="#070A0D" />
-			<circle cx="150" cy="50" r="115" fill="#0F151B" />
-			<circle cx="150" cy="50" r="90" fill="#161F28" />
-			<circle cx="150" cy="50" r="70" fill="#1D2935" />
-			<circle cx="150" cy="50" r="55" fill="#253443" />
-			<circle cx="150" cy="50" r="45" fill="#2C3E50" />
-			<g clip-path="url(#moon-clip)" id="moon">
-				<circle cx="150" cy="50" r="40" fill="#e0e0e0" />
-				<circle cx="175" cy="50" r="5" fill="#c0c0c0" />
-				<circle cx="125" cy="75" r="15" fill="#c0c0c0" />
-				<circle cx="143" cy="38" r="15" fill="#c0c0c0" />
-				<circle cx="173" cy="73" r="10" fill="#c0c0c0" />
-			</g>
-		</g>
-		<g style="opacity: 0.7" id="cloud">
-			<polygon points="50,100 150,100 150,50 50,50" fill="white" />
-			<circle cx="0" cy="90" r="40" fill="white" />
-			<circle cx="50" cy="75" r="30" fill="white" />
-			<circle cx="100" cy="70" r="40" fill="white" />
-			<circle cx="150" cy="75" r="30" fill="white" />
-			<circle cx="200" cy="90" r="40" fill="white" />
-		</g>
-	</g>
+  <defs>
+    <clipPath id="toggle-clip">
+      <circle cx="50" cy="50" r="50" />
+      <circle cx="150" cy="50" r="50" />
+      <path d="M 50,0 L 150,0 L 150,100 L 50,100 Z" />
+    </clipPath>
+  </defs>
+  <defs>
+    <clipPath id="moon-clip">
+      <circle cx="150" cy="50" r="40" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#toggle-clip)">
+    <g id="light">
+      <polygon points="0,0 200,0 200,100 0,100" fill="#2178DD" />
+      <circle cx="50" cy="50" r="145" fill="#3286DF" />
+      <circle cx="50" cy="50" r="115" fill="#4395E2" />
+      <circle cx="50" cy="50" r="90" fill="#54A3E4" />
+      <circle cx="50" cy="50" r="70" fill="#65B1E6" />
+      <circle cx="50" cy="50" r="55" fill="#76C0E9" />
+      <circle cx="50" cy="50" r="45" fill="#87CEEB" />
+      <circle cx="50" cy="50" r="40" fill="gold" id="sun" />
+    </g>
+    <g id="dark">
+      <polygon points="0,0 200,0 200,100 0,100" fill="#000000" />
+      <circle cx="150" cy="50" r="145" fill="#070A0D" />
+      <circle cx="150" cy="50" r="115" fill="#0F151B" />
+      <circle cx="150" cy="50" r="90" fill="#161F28" />
+      <circle cx="150" cy="50" r="70" fill="#1D2935" />
+      <circle cx="150" cy="50" r="55" fill="#253443" />
+      <circle cx="150" cy="50" r="45" fill="#2C3E50" />
+      <g clip-path="url(#moon-clip)" id="moon">
+        <circle cx="150" cy="50" r="40" fill="#e0e0e0" />
+        <circle cx="175" cy="50" r="5" fill="#c0c0c0" />
+        <circle cx="125" cy="75" r="15" fill="#c0c0c0" />
+        <circle cx="143" cy="38" r="15" fill="#c0c0c0" />
+        <circle cx="173" cy="73" r="10" fill="#c0c0c0" />
+      </g>
+    </g>
+    <g style="opacity: 0.7" id="cloud">
+      <polygon points="50,100 150,100 150,50 50,50" fill="white" />
+      <circle cx="0" cy="90" r="40" fill="white" />
+      <circle cx="50" cy="75" r="30" fill="white" />
+      <circle cx="100" cy="70" r="40" fill="white" />
+      <circle cx="150" cy="75" r="30" fill="white" />
+      <circle cx="200" cy="90" r="40" fill="white" />
+    </g>
+  </g>
 </svg>

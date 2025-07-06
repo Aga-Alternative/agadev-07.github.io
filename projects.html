@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn more about AgaDev and its projects" />
+    <meta property="og:title" content="AgaDev portfolio Home" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://agadev-07.github.io" />
+    <meta property="og:image" content="svg/logo.svg" />
+    <meta property="og:image:type" content="image/svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta name="theme-color" content="#FF0000" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<meta name="description" content="Learn more about AgaDev and its projects">
-	<meta property="og:title" content="AgaDev portfolio Home">
-	<meta property="og:type" content="article">
-	<meta property="og:url" content="https://agadev-07.github.io">
-	<meta property="og:image" content="svg/logo.svg">
-	<meta property="og:image:type" content="image/svg">
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="1200">
-	<meta name="theme-color" content="#FF0000">
+    <link rel="preload" as="image" href="/img/agamca.webp" />
+    <link rel="preload" as="image" href="/svg/agalang.svg" />
 
-	<link rel="stylesheet" href="css/index.bundle.css" />
-	<script src="js/index.js" type="module"></script>
-</head>
+    <link rel="stylesheet" href="/css/index.bundle.css" />
+    <script src="/js/index.min.js" defer></script>
+  </head>
 
-<body>
-	<aga-header></aga-header>
-	<main>
-		<aga-section data-type="projects" data-name="main_projects">
-			<aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
-			<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
-		</aga-section>
-		<aga-section data-type="projects" data-name="secondary_projects">
-			<aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
-			<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
-			<aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
-			<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
-			<aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
-			<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
-			<aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
-		</aga-section>
-	</main>
-	<footer></footer>
-</body>
-
+  <body>
+    <aga-header></aga-header>
+    <main>
+      <aga-section data-type="projects" data-name="main_projects">
+        <aga-project data-image-type="svg" data-name="agalang" data-langs="Rust"></aga-project>
+        <a href="https://aga-mca.pages.dev">
+          <aga-project data-image-type="webp" data-name="agamca" data-langs="HTML,CSS,JavaScript"></aga-project>
+        </a>
+      </aga-section>
+      <aga-section data-type="projects" data-name="secondary_projects">
+        <a href="https://mc-panorama.pages.dev/">
+          <aga-project data-image-type="webp" data-name="mc-panorama" data-langs="JavaScript"></aga-project>
+        </a>
+      </aga-section>
+    </main>
+    <footer></footer>
+  </body>
 </html>
