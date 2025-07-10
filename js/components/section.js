@@ -40,12 +40,7 @@ class AgaSection extends HTMLElement {
 	onAppendChild($child) {
 		const TagChildren = $child.tagName.toLowerCase();
 		if (TagChildren === 'a' || TagChildren === AGA_PROJECT_TAG) {
-			const $container = this.querySelector('.container');
-			const length = $container.children.length;
-			$container.lastElementChild?.classList.remove('last-odd');
-			const isOdd = length % 2 == 0;
-			if (isOdd) $child.classList.add('last-odd');
-			$container.appendChild($child);
+			this.querySelector('.container').appendChild($child);
 		}
 	}
 }

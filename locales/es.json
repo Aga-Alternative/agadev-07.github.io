@@ -21,6 +21,9 @@
   "agamca_title": "Aga-MCA",
   "agamca_image": "Vista previa de la pagina de Aga-MCA",
   "agamca_description": "Aga-MCA es un proyecto donde subo los addons, scripts y texturas que hago para el videojuego Minecraft.",
+  "mc-panorama_title": "MC-Panorama",
+  "mc-panorama_image": "Vista previa de la pagina de MC-Panorama",
+  "mc-panorama_description": "MC-Panorama es una pagina que recrea los fondos de minecraft de diferentes versiones. Esta pagina se utiliza para el fondo de Aga-MCA.",
   "language_selector": "Selector de idioma",
   "theme_button": "Selector de tema",
   "developed_in": "Desarrollado en %s."

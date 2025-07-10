@@ -24,7 +24,7 @@ class AgaProject extends HTMLElement {
     } else {
       const $image = document.createElement(tagType);
       $image.setAttribute('src', imageSrc);
-      $image.setAttribute('data-lang-key', 'language_selector');
+      $image.setAttribute('data-lang-key', `${attrName}_image`);
       $image.setAttribute('data-lang-type', 'alt');
       $image.setAttribute('draggable', 'false');
       $imageWrapper.appendChild($image);
@@ -37,8 +37,7 @@ class AgaProject extends HTMLElement {
 
     const $p_developedIn = document.createElement('p');
     $p_developedIn.classList.add('developed-in');
-    if (attrLangs.includes(','))
-      $p_developedIn.setAttribute('data-lang-args-and-list', attrLangs);
+    if (attrLangs.includes(',')) $p_developedIn.setAttribute('data-lang-args-and-list', attrLangs);
     else $p_developedIn.setAttribute('data-lang-args', attrLangs);
     $p_developedIn.setAttribute('data-lang-key', 'developed_in');
     this.appendChild($p_developedIn);
